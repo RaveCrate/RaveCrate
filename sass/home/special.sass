@@ -1,0 +1,88 @@
+/*===============================
+ *whats-special-section
+ *================================
+
+#whats-special
+  position: relative
+  padding-top: 50px
+  padding-bottom: 100px
+  margin: 0 auto
+  overflow: hidden
+  color: #555
+  border-bottom: solid
+  border-bottom-color: #bbb
+  height: 50%
+  text-align: center
+  background-color: #fff
+  font-size: 40px
+
+.special-hover p
+  margin-top: 45%
+  text-align: center
+
+.imgWrap img
+  height: 400px
+  width: 400px
+
+.special-imgs
+  padding-top: 50px
+  margin: 0 auto
+
+.special-hover
+  position: absolute
+  top: 0
+  bottom: 0
+  left: 0
+  right: 0
+  background: rgba(0, 0, 0, 0.72)
+  color: #fff
+  visibility: hidden
+  opacity: 0
+  -webkit-transition: opacity 1000ms
+  -moz-transition: opacity 1000ms
+  -o-transition: opacity 1000ms
+  transition: opacity 1000ms
+
+.imgWrap
+  position: relative
+  height: 400px
+  width: 400px
+  margin: 0 auto
+  &:hover .special-hover
+    visibility: visible
+    opacity: 1
+
+@media (max-width: 1380px)
+  .imgWrap
+    img
+      height: 300px
+      width: 300px
+    height: 300px
+    width: 300px
+
+@media (max-width: 800px)
+  .imgWrap
+    img
+      height: 200px
+      width: 200px
+    height: 200px
+    width: 200px
+  #whats-special
+    padding-top: 0px
+    padding-bottom: 50px
+    font-size: 14px
+  .special-hover
+    visibility: visible
+    opacity: 1
+
+@media (max-width: 420px)
+  .imgWrap
+    img
+      height: 100px
+      width: 100px
+    height: 100px
+    width: 100px
+
+@media (max-width: 320px)
+  #whats-special, .special-hover p
+    margin-right: 10px
