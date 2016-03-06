@@ -162,8 +162,8 @@
   .c-menu__item
     display: block
     text-align: center
-    border-top: solid 1px #00adef
-    border-bottom: solid 1px #00adef
+    border-top: solid 1px $blue
+    border-bottom: solid 1px $blue
     &:first-child
       border-top: none
     &:last-child
@@ -231,6 +231,9 @@ body.has-active-menu
   background-color: #000
   float: left
   border: #000
+  color: #fff
+  &:hover
+    color: $blue
 
 .close-login
   padding: 20px
@@ -240,7 +243,7 @@ body.has-active-menu
 
 .nav-signup
   padding: 15px 50px
-  background-color: #00adef
+  background-color: $blue
   border: 1px solid #fff
   &:hover
     color: #ddd
@@ -248,6 +251,7 @@ body.has-active-menu
 
 .nav-signup-div
   margin: 30px
+  margin-left: 65px
 
 /* -----------------------------------------------------------------------------
  *
@@ -302,13 +306,13 @@ body.has-active-menu
 .nav-image
   img
     height: 75px
-  position: fixed
-  bottom: 0px
-  left: 20px
-  margin: 0 auto
+    position: fixed
+    bottom: 0px
+    left: 20px
+    margin: 0 auto
 
 .c-menu
-  border: 3px solid #00adef
+  border: 3px solid $blue
 
 .nav-border-bottom
-  border-top: solid 1px #00adef
+  border-top: solid 1px $blue
