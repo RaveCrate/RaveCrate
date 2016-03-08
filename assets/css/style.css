@@ -58,7 +58,7 @@ a {
   color: #fff; }
   .o-header-nav__link:hover {
     color: #fff;
-    background-color: #3184a1; }
+    background-color: #00adef; }
 
 .o-header__title {
   margin: 24px;
@@ -113,10 +113,11 @@ a {
   display: block;
   margin: 0;
   padding: 4px 24px;
-  border: solid 2px #67b5d1; }
+  border: solid 2px #00adef; }
   .o-sub-nav__link:hover {
     color: #fff;
-    background-color: #67b5d1; }
+    background-color: #00adef;
+    left: 20px; }
 
 .o-sub-nav__item.active .o-sub-nav__link {
   color: #fff;
@@ -415,7 +416,8 @@ body.has-active-menu {
     margin-right: 25%; }
   .getstarted a {
     color: white;
-    font-size: 20px; }
+    font-size: 20px;
+    left: 0; }
     .getstarted a:hover {
       color: #00adef; }
 
@@ -694,3 +696,58 @@ footer {
 footer {
   bottom: 0;
   position: absolute; }
+
+.signup-body {
+  background-image: url(../images/header2.jpg);
+  background-size: cover;
+  position: center; }
+
+.signup-text {
+  color: #fff;
+  text-align: center;
+  margin-top: 30px; }
+  .signup-text h1 {
+    margin-bottom: 100px; }
+
+button {
+  color: white; }
+
+.signup-form {
+  display: block; }
+  .signup-form a {
+    color: orange; }
+  .signup-form h3 {
+    text-align: center;
+    color: white;
+    margin-bottom: -10px;
+    margin-top: 40px; }
+  .signup-form input {
+    border: 2px solid #00adef;
+      border-radius: 50px;
+    margin-top: 30px;
+    height: 50px;
+    width: 100%;
+    padding: 0 20px; }
+    .signup-form input:focus {
+      outline: none; }
+  .signup-form ::-webkit-input-placeholder {
+    color: #00adef; }
+  .signup-form button {
+    margin-top: 100px;
+    height: 50px;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 30px;
+    border: 2px solid #fff;
+    background-color: #00adef;
+    color: #fff;
+    text-transform: uppercase;
+    transition: all 200ms ease-in-out; }
+    .signup-form button:hover {
+      background-color: #fff;
+      border-color: #00adef;
+      color: #00adef; }
+  .signup-form p {
+    text-align: center;
+    color: white;
+    margin-bottom: 50px; }
