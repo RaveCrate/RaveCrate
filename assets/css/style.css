@@ -818,37 +818,40 @@ video {
   background: white;
 }
 
-/*========================
- *Footer
- *========================== */
-#footer {
-  position: relative;
-  padding: 35px 0 25px;
-  color: #fff;
-}
-#footer a {
-  font-weight: 700;
-  color: #fff;
-}
-#footer a:hover {
-  color: #00adef;
-}
-#footer .footer-menu li a {
-  font-weight: 400;
-}
-#footer .footer-menu li a:hover {
-  color: #00adef;
-}
-
-footer {
+.bottom-footer {
+  padding: 70px;
   background-color: #000;
+  text-align: center;
+  color: #fff;
 }
 
-footer {
-  bottom: 0;
-  position: absolute;
+.social-media i {
+  margin: 0 10px;
+}
+.social-media i:hover {
+  color: #00adef;
 }
 
+.copyright {
+  font-weight: 700;
+}
+
+.footer-links {
+  background-color: #222;
+  text-transform: capitalize;
+  font-weight: 600;
+  padding: 20px;
+}
+.footer-links li {
+  display: inline;
+  padding: 20px;
+}
+
+@media (max-width: 400px) {
+  .col-md-1 {
+    margin-bottom: 10px;
+  }
+}
 .signup-body {
   background-image: url(../images/signup-bg.jpg);
   background-size: cover;
