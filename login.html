@@ -37,10 +37,13 @@
 			<a href="signup.html" class="nav-signup">SIGN UP</a>
 		</div>
 		<ul class="c-menu__items">
-			<li class="c-menu__item nav-border-top"><a href="#" class="c-menu__link">HOME</a></li>
-			<li class="c-menu__item"><a href="#" class="c-menu__link">EVENTS</a></li>
-			<li class="c-menu__item"><a href="#" class="c-menu__link">BE A FREELANCER</a></li>
-			<li class="c-menu__item nav-border-bottom"><a href="about.html" class="c-menu__link">ABOUT US</a></li>
+			<li class="c-menu__item nav-border-top"><a href="index.html" class="c-menu__link">HOME</a></li>
+			<li class="c-menu__item"><a href="about.html" class="c-menu__link">ABOUT US</a></li>
+			<li class="c-menu__item"><a href="events.html" class="c-menu__link">EVENTS</a></li>
+			<li class="c-menu__item"><a href="createevents.html" class="c-menu__link">CREATE AN EVENT</a></li>
+			<li class="c-menu__item"><a href="freelancer.html" class="c-menu__link">FREELANCERS</a></li>
+			<li class="c-menu__item"><a href="createfreelancer.html" class="c-menu__link">BE A FREELANCER</a></li>
+			<li class="c-menu__item nav-border-bottom"><a href="#" class="c-menu__link">SETTINGS</a></li>
 		</ul>
 		<div class="nav-image">
 			<img src="assets/images/RC_Topbanner.png">
@@ -54,12 +57,12 @@
 			<div class="login-form">
 				<h2>Log into RaveCrate</h2>
 				<form>
-					<input type="text" name="email" placeholder="Email" class="login-input">
-					<input type="password" name="password" placeholder="Password" class="login-input">
-					<button type="button" name="button">Log In</button>
+					<input type="text" name="email" placeholder="Email" id="email" class="login-input">
+					<input type="password" name="password" placeholder="Password" id="password" class="login-input">
+					<button type="submit" id="login" name="button">Log In</button>
 				</form>
 				<div class="login-checkbox">
-					<input type="checkbox" name="checkbox" class="checkbox"><label>Keep me logged in</label>
+					<input type="checkbox" name="checkbox" class="checkbox"><label> Keep me logged in</label>
 				</div>
 				<div class="forgot-pw-wrap">
 					<a href="#" class="forgot-pw">Forgot your password?</a>
@@ -70,7 +73,11 @@
 		<h1 class="become-login">Become an event planner or freelancer today!</h1>
 	</div>
 
-
+	<!-- <form id="myForm" action="http://52.25.111.252/api/v1/authUser" method="post">
+	    Email: <input type="text" name="email" />
+	    Password: <input type="text" name="password" />
+	    <input type="submit" value="Submit Comment" />
+	</form> -->
 
 
 	<footer>
@@ -80,14 +87,14 @@
 				<div class="col-md-1"><a href="login.html">login</a></div>
 				<div class="col-md-1"><a href="eventplanner.html">eventplanner</a></div>
 				<div class="col-md-1"><a href="freelancer.html">freelancer</a></div>
-				<div class="col-md-1"><a href="icons.html">icons</a></div>
-				<div class="col-md-1"><a href="peoples.html">peoples</a></div>
+				<div class="col-md-1"><a href="comingsoon.html">icons</a></div>
+				<div class="col-md-1"><a href="comingsoon.html">peoples</a></div>
 				<div class="col-md-1"><a href="events.html">events</a></div>
-				<div class="col-md-1"><a href="contact-us.html">contact us</a></div>
-				<div class="col-md-1"><a href="terms-and-conditions.html">terms</a></div>
-				<div class="col-md-1"><a href="find-a-city.html">find a city</a></div>
+				<div class="col-md-1"><a href="comingsoon.html">contact us</a></div>
+				<div class="col-md-1"><a href="comingsoon.html">terms</a></div>
+				<div class="col-md-1"><a href="comingsoon.html">find a city</a></div>
 				<div class="col-md-1"><a href="about.html">about us</a></div>
-				<div class="col-md-1"><a href="careers.html">careers</a></div>
+				<div class="col-md-1"><a href="comingsoon.html">careers</a></div>
 			</div>
 		</div>
 		<div class="row bottom-footer">
@@ -115,6 +122,7 @@
 	<script type="text/javascript" src="assets/js/wow.min.js"></script>
 	<script type="text/javascript" src="assets/js/main.js"></script>
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+	<!-- <script src="http://malsup.github.com/jquery.form.js"></script> -->
 	<script>
 		close = document.getElementById("close");
 		close.addEventListener('click', function() {
@@ -138,5 +146,27 @@
 		slideLeft.open();
 		});
 	</script>
+	<!-- <script type="text/javascript">
+		$.ajax({
+			method: "POST",
+			crossDomain: true,
+			async: true,
+			contentType: "application/x-www-form-urlencoded; charset=utf-8",
+			dataType: 'json',
+			headers: {"username": "nhendren7@gmail.com", "password": "nick1234",},
+			url: "http://52.25.111.252/api/v1/authUser"
+		}).done(function (data) {
+			console.log(data);
+		});
+		</script> -->
+		<!-- <script>
+        // wait for the DOM to be loaded
+        $(document).ready(function() {
+            // bind 'myForm' and provide a simple callback function
+            $('#myForm').ajaxForm(function() {
+                alert("Thank you for your comment!");
+            });
+        });
+    </script> -->
 </body>
 </html>

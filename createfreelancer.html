@@ -42,15 +42,15 @@
     <div class="nav-signup-div">
       <a href="signup.html" class="nav-signup">SIGN UP</a>
     </div>
-    	<ul class="c-menu__items">
-        <li class="c-menu__item nav-border-top"><a href="index.html" class="c-menu__link">HOME</a></li>
-        <li class="c-menu__item"><a href="about.html" class="c-menu__link">ABOUT US</a></li>
-        <li class="c-menu__item"><a href="events.html" class="c-menu__link">EVENTS</a></li>
-        <li class="c-menu__item"><a href="createevents.html" class="c-menu__link">CREATE AN EVENT</a></li>
-        <li class="c-menu__item"><a href="freelancer.html" class="c-menu__link">FREELANCERS</a></li>
-        <li class="c-menu__item"><a href="createfreelancer.html" class="c-menu__link">BE A FREELANCER</a></li>
-        <li class="c-menu__item nav-border-bottom"><a href="comingsoon.html" class="c-menu__link">SETTINGS</a></li>
-    	</ul>
+    <ul class="c-menu__items">
+      <li class="c-menu__item nav-border-top"><a href="index.html" class="c-menu__link">HOME</a></li>
+      <li class="c-menu__item"><a href="about.html" class="c-menu__link">ABOUT US</a></li>
+      <li class="c-menu__item"><a href="events.html" class="c-menu__link">EVENTS</a></li>
+      <li class="c-menu__item"><a href="createevents.html" class="c-menu__link">CREATE AN EVENT</a></li>
+      <li class="c-menu__item"><a href="freelancer.html" class="c-menu__link">FREELANCERS</a></li>
+      <li class="c-menu__item"><a href="createfreelancer.html" class="c-menu__link">BE A FREELANCER</a></li>
+      <li class="c-menu__item nav-border-bottom"><a href="#" class="c-menu__link">SETTINGS</a></li>
+    </ul>
       <div class="nav-image">
         <img src="assets/images/RC_Topbanner.png">
       </div>
@@ -60,18 +60,76 @@
 
     <div class="container-fluid create-event">
 
-      <div class="create-event">
-      <h1>Welcome to RaveCrate</h1>
+      <h1>Become a Freelancer</h1>
+
       <br>
-      <div style="width: 50vw; text-align: center; margin: auto; font-size: 18px; border: 5px solid black; padding: 10px;">
-      <p>The next evolution of the party scene – a one-stop solution for all things Events. Frustrated with the lack of awareness and accessibility to information surrounding local events, the company's founders realized that something was needed, something that would serve to bring people together easily and in real time. That something is RaveCrate, and it's being rolled out now.</p>
-      <p>The way the platform works is remarkably simple: Event Organizers create their event on our website – a rave, a pool party, or anything else one can possibly think of. All one has to do is simply provide a few basic details, such as location, time, and ticket price (if applicable) and voila, they have created an event on RaveCrate.com! Our platform allows event organizers to reach all parties involved – event seekers, entertainers, sponsors, etc – and through that process all parties can connect and benefit. Event organizers gain a cost-effective way to promote their events to a larger audience, sponsors get large-scale exposure, and event seekers never have to miss an event again.</p>
-      <p> However, the benefits aren't just for the organizers and attendees. RaveCrate also offers opportunities for entertainers, such as dancers, singers, DJs, musicians, etc. RaveCrate provides organizers access to a large pool of talent, and connects that talent with opportunity. By streamlining the process we seek to create a hub of everything events. We take pride in helping people connect – for work and for play.</p>
-      <p> RaveCrate will also be releasing a mobile application. This means organizers, entertainers, and event seekers will always have RaveCrate at their fingertips. The app has been specially designed for the event seeker who is already out on the town but wants access to information on nearby local events. All they have to do is through a little tech magic RaveCrate will find and recommend nearby events.</p>
-      <p>So join the RaveCrate Revolution, and let us help get you connected.</p>
-      <p>- Johnny</p>
-    </div>
-      </div>
+      <br>
+
+      <form>
+        <div class="form-group row">
+          <label for="inputEmail3" class="col-sm-offset-2 col-sm-2 form-control-label">First Name</label>
+          <div class="col-sm-5">
+            <input type="text" class="form-control" id="inputEmail3" placeholder="First Name">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="inputPassword3" class="col-sm-offset-2 col-sm-2 form-control-label">Last Name</label>
+          <div class="col-sm-5">
+            <input type="text" class="form-control" id="inputPassword3" placeholder="Last Name">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="inputPassword3" class="col-sm-offset-2 col-sm-2 form-control-label">Type of Freelancer</label>
+          <div class="col-sm-5">
+            <select class="form-control" id="exampleSelect1">
+              <option>Apparel</option>
+              <option>Bartender</option>
+              <option>Catering</option>
+              <option>Chauffeur</option>
+              <option>Clown</option>
+              <option>Club</option>
+              <option>Dancer</option>
+              <option>DJ</option>
+              <option>Event Planner</option>
+              <option>Host</option>
+              <option>Keynote Speaker</option>
+              <option>Musician</option>
+              <option>Personal Trainer</option>
+              <option>Photographer</option>
+              <option>Receptionist</option>
+              <option>Security</option>
+              <option>Stylist</option>
+              <option>Valet</option>
+              <option>Videographer</option>
+              <option>Waitress</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="inputEmail3" class="col-sm-offset-2 col-sm-2 form-control-label">Description</label>
+          <div class="col-sm-5">
+            <textarea class="form-control" id="exampleTextarea" rows="3" placeholder="Please provide a brief description of your skills/background"></textarea>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="inputEmail3" class="col-sm-offset-2 col-sm-2 form-control-label">Hourly Rate</label>
+          <div class="col-sm-5">
+            <div class="input-group">
+              <span class="input-group-addon" id="basic-addon1">$</span>
+              <input type="text" class="form-control" placeholder="Hourly Rate" aria-describedby="basic-addon1">
+            </div>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="inputEmail3" class="col-sm-offset-2 col-sm-2 form-control-label">Add Profile Picture</label>
+          <div class="col-sm-5">
+            <input type="file" class="form-control-file" id="exampleInputFile">
+          </div>
+        </div>
+        <a href="events.html"<button type="submit" class="btn btn-primary">Submit</button></a>
+      </form>
+
+      <br>
       <br>
 
     </div>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0/angular.min.js"></script>
+<body>
+
+<div ng-app="myApp" ng-controller="userCtrl">
+
+<ul>
+  <li ng-repeat="x in myData">
+    {{ test }}
+  </li>
+</ul>
+
+</div>
+
+<script>
+var app = angular.module('myApp', []);
+
+app.config(function ($httpProvider) {
+  $httpProvider.defaults.headers.common = {};
+  $httpProvider.defaults.headers.post = {};
+  $httpProvider.defaults.headers.put = {};
+  $httpProvider.defaults.headers.patch = {};
+});
+
+app.controller('userCtrl', function($scope, $http) {
+  $http.get('http://52.25.111.252/api/v1/getUser/1', {
+    headers: {'username': 'adrian.ajx@gmail.com', 'password': 'f7dDk5cvjQ'}
+  }).then(function successCallback(response) {
+      $scope.response = response.data.response;
+    }, function errorCallback(response) { });
+});
+</script>
+
+</body>
+</html>

@@ -1,7 +1,7 @@
 jQuery(function ($) {
 
     'use strict';
-	
+
 	/*==============================================================*/
     // Table of index
     /*==============================================================*/
@@ -11,7 +11,7 @@ jQuery(function ($) {
     # Magnific Popup
     # WoW Animation
     ==============================================================*/
-	
+
 	// ----------------------------------------------
     // # Demo Chooser
     // ----------------------------------------------
@@ -24,35 +24,35 @@ jQuery(function ($) {
 		})
 
     }());
-	
+
 	/*==============================================================*/
     // # Preloader
     /*==============================================================*/
-    
+
     (function () {
-        $(window).load(function(){         
-            $('.preloader').fadeOut('slow',function(){$(this).remove();});       
+        $(window).load(function(){
+            $('.preloader').fadeOut('slow',function(){$(this).remove();});
         });
 
     }());
-	
-	
+
+
 	/*==============================================================*/
 	//Mobile Toggle Control
 	/*==============================================================*/
-	
-	 $(function(){ 
+
+	 $(function(){
 		 var navMain = $("#mainmenu");
 		 navMain.on("click", "a", null, function () {
 			 navMain.collapse('hide');
 		 });
 	 });
-	 	
-		
+
+
 	/*==============================================================*/
     // Menu add class
     /*==============================================================*/
-	(function () {	
+	(function () {
 		function menuToggle(){
 			var windowWidth = $(window).width();
 			if(windowWidth > 767 ){
@@ -64,23 +64,23 @@ jQuery(function ($) {
 					};
 					if( $(window)){
 						$('#home-three .navbar').addClass('navbar-fixed-top');
-					} 
+					}
 				});
 			}else{
-				
+
 				$('.navbar').addClass('navbar-fixed-top');
-					
-			};	
+
+			};
 		}
 
 		menuToggle();
 	}());
-	
+
 	$('#mainmenu').onePageNav({
 		currentClass: 'active',
 	});
-	
-	
+
+
 	/*==============================================================*/
     // WoW Animation
     /*==============================================================*/
@@ -90,44 +90,41 @@ jQuery(function ($) {
     // Owl Carousel
     /*==============================================================*/
 
-	$("#team-slider").owlCarousel({ 	
-		pagination	: false,	
+	$("#team-slider").owlCarousel({
+		pagination	: false,
 		navigation:true,
 		navigationText: [
 		  "<span class='team-slider-left'><i class=' fa fa-angle-left '></i></span>",
 		  "<span class='team-slider-right'><i class=' fa fa-angle-right'></i></span>"
 		]
 	});
-	
-	$("#screenshot-slider").owlCarousel({ 
+
+	$("#screenshot-slider").owlCarousel({
 		items : 4,
-		pagination	: true,	
+		pagination	: true,
 	});
-	
+
 	/*==============================================================*/
     // Magnific Popup
     /*==============================================================*/
-	
+
 	(function () {
 		$('.image-link').magnificPopup({
 			gallery: {
 			  enabled: true
-			},		
-			type: 'image' 
+			},
+			type: 'image'
 		});
 		$('.feature-image .image-link').magnificPopup({
 			gallery: {
 			  enabled: false
-			},		
-			type: 'image' 
+			},
+			type: 'image'
 		});
-		$('.image-popup').magnificPopup({	
-			type: 'image' 
+		$('.image-popup').magnificPopup({
+			type: 'image'
 		});
 		$('.video-link').magnificPopup({type:'iframe'});
 	}());
-	
-	
-	
-});
 
+});

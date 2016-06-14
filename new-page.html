@@ -88,17 +88,17 @@
 	<script type="text/javascript" src="assets/js/jquery.magnific-popup.min.js"></script>
 	<script type="text/javascript" src="assets/js/jquery.nav.js"></script>
 	<script type="text/javascript" src="assets/js/canvas.js"></script>
-	<script type="text/javascript" src="assets/js/preloader.js"></script>
+	<!-- <script type="text/javascript" src="assets/js/preloader.js"></script> -->
 	<script type="text/javascript" src="assets/js/owl.carousel.min.js"></script>
 	<script type="text/javascript" src="assets/js/wow.min.js"></script>
 	<script type="text/javascript" src="assets/js/main.js"></script>
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
 	<script>
 		close = document.getElementById("close");
-		close.addEventListener('click', function() {
-		note = document.getElementById("note");
-		note.style.display = 'none';
-		}, false);
+		// close.addEventListener('click', function() {
+		// note = document.getElementById("note");
+		// note.style.display = 'none';
+		// }, false);
 		</script>
 		<script src="assets/js/menu.js"></script>
 		<script>
@@ -115,6 +115,64 @@
 		e.preventDefault;
 		slideLeft.open();
 		});
+	</script>
+	<script type="text/javascript">
+		$.ajax({
+			url: "http://52.25.111.252/api/v1/authUser",
+			method: "POST",
+			crossDomain: true,
+			contentType: "application/x-www-form-urlencoded; charset=utf-8",
+			dataType: 'json',
+			data: {email: "nick@ravecrate.com", password: "12345"},
+			success: function(data) {
+				console.log(JSON.stringify(data));
+				console.log("success!");
+			}
+		});
+// $.ajax({
+//
+//   // The 'type' property sets the HTTP method.
+//   // A value of 'PUT' or 'DELETE' will trigger a preflight request.
+//   method: 'GET',
+//
+//   // The URL to make the request to.
+//   url: 'http://52.25.111.252/api/v1/getEvent/1',
+//
+//   // The 'contentType' property sets the 'Content-Type' header.
+//   // The JQuery default for this property is
+//   // 'application/x-www-form-urlencoded; charset=UTF-8', which does not trigger
+//   // a preflight. If you set this value to anything other than
+//   // application/x-www-form-urlencoded, multipart/form-data, or text/plain,
+//   // you will trigger a preflight request.
+//   contentType: 'application/json',
+//
+//   xhrFields: {
+//     // The 'xhrFields' property sets additional fields on the XMLHttpRequest.
+//     // This can be used to set the 'withCredentials' property.
+//     // Set the value to 'true' if you'd like to pass cookies to the server.
+//     // If this is enabled, your server must respond with the header
+//     // 'Access-Control-Allow-Credentials: true'.
+//     withCredentials: false
+//   },
+//
+//   headers: {
+//     // Set any custom headers here.
+//     // If you set any non-simple headers, your server must include these
+//     // headers in the 'Access-Control-Allow-Headers' response header.
+// 		"username": "adrian.ajx@gmail.com", "password": "f7dDk5cvjQ"
+//   },
+//
+//   success: function() {
+//     // Here's where you handle a successful response.
+//   },
+//
+//   error: function() {
+//     // Here's where you handle an error response.
+//     // Note that if the error was due to a CORS issue,
+//     // this function will still fire, but there won't be any additional
+//     // information about the error.
+//   }
+// });
 	</script>
 </body>
 </html>
