@@ -34,9 +34,7 @@ app.controller('eventCtrl', function($scope, $http) {
 
   }
 
-<<<<<<< HEAD
   //  console.log(getDateTime());
-
 
   $http({
     method: "GET",
