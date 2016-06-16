@@ -71,12 +71,12 @@
 				<div class="col-md-4 signup-form">
 					<h3>It's free so join today!</h3>
 					<form action="index.html" method="post">
-						<input type="text" name="first-name" value="" placeholder="First Name">
-						<input type="text" name="last-name" value="" placeholder="Last Name">
-						<input type="text" name="email" value="" placeholder="Email">
-						<input type="password" name="password" value="" placeholder="Password">
-						<input type="password" name="confirm-password" value="" placeholder="Confirm Password">
-						<a href="events.html"><button type="button" name="button" class="btn btn-1">sign up</button></a>
+						<input type="text" name="first-name" id="first-name" value="" placeholder="First Name">
+						<input type="text" name="last-name" id="last-name" value="" placeholder="Last Name">
+						<input type="text" name="email" id="email" value="" placeholder="Email">
+						<input type="password" name="password" id="password" value="" placeholder="Password">
+						<input type="password" name="confirm-password" id="confirm-password" value="" placeholder="Confirm Password">
+						<a href="events.html"><button type="button" name="sign-up" id="sign-up" class="btn btn-1">sign up</button></a>
 					</form>
 					<p class="legal">By signing up, I agree to Rave Crate’s <a>terms of service</a>, <a>Privacy Policy</a>, and <a>cookie policy</a>.</p>
 					<p class="legal">
@@ -132,11 +132,11 @@
 	<script type="text/javascript" src="assets/js/main.js"></script>
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
 	<script>
-		close = document.getElementById("close");
-		close.addEventListener('click', function() {
-		note = document.getElementById("note");
-		note.style.display = 'none';
-		}, false);
+		// close = document.getElementById("close");
+		// close.addEventListener('click', function() {
+		// note = document.getElementById("note");
+		// note.style.display = 'none';
+		// }, false);
 		</script>
 		<script src="assets/js/menu.js"></script>
 		<script>
@@ -153,6 +153,35 @@
 		e.preventDefault;
 		slideLeft.open();
 		});
+	</script>
+	<script>
+	$('#sign-up').on('click', function(e) {
+
+    e.preventDefault();
+
+    var signUpFirstName = $('#first-name').val();
+    var signUpLastName = $('#last-name').val();
+    var signUpEmail = $('#email').val();
+    var signUpPassword = $('#password').val();
+    var signUpConfirmPassword = $('#confirm-password').val();
+
+		$.ajax({
+			url: "http://52.25.111.252/api/v1/addUser",
+			method: "POST",
+			crossDomain: true,
+			contentType: "application/x-www-form-urlencoded; charset=utf-8",
+			dataType: 'json',
+			data: {first_name: signUpFirstName, last_name: signUpLastName, email: signUpEmail, password: signUpPassword, confirm_password: signUpConfirmPassword},
+			success: function(data) {
+				console.log(JSON.stringify(data));
+				console.log("success");
+				// window.location='events.html'
+			},
+		});
+		// if ( userEmail && userPassword ) {
+    //         window.location='events.html'
+    //     }
+	});
 	</script>
 </body>
 </html>

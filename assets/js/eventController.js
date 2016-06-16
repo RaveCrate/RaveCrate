@@ -36,6 +36,7 @@ app.controller('eventCtrl', function($scope, $http) {
 
    console.log(getDateTime());
 
+    // The GET request to list the events
     $http({
       method: "GET",
       crossDomain: true,
