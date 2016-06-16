@@ -586,7 +586,7 @@ body.has-active-menu {
   text-align: left;
   max-width: 700px;
   /*left: auto;*/
-  top: 60%;
+  top: 40%;
   transform: translateY(-50%);
   bottom: initial;
 }
@@ -900,6 +900,7 @@ video {
   .icon-content img {
     height: 25%;
     width: 25%;
+    padding-bottom: -bottom: 5px;
   }
   .popover {
     width: 200px;
@@ -920,7 +921,7 @@ video {
   .icon-content img {
     height: 50%;
     width: 50%;
-    padding-bottom: 40px;
+    padding-bottom: 5px;
   }
   .popover {
     width: 150px;
@@ -944,14 +945,15 @@ video {
   }
 }
 
-@media (max-height: 670px) {
+@media (max-height: 700px) {
   .icon-content img {
-    height: 25%;
-    width: 25%;
+    height: 23%;
+    width: 23%;
+    padding-bottom: 5px;
   }
 }
 
-@media (max-height: 600px) {
+@media (max-height: 610px) {
   .icon-content img {
     height: 20%;
     width: 20%;
