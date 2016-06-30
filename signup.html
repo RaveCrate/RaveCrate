@@ -166,12 +166,15 @@
     var signUpConfirmPassword = $('#confirm-password').val();
 
 		$.ajax({
-			url: "http://52.25.111.252/api/v1/addUser",
+			url: "http://52.25.111.252:8080/api/v2/addUser",
 			method: "POST",
 			crossDomain: true,
 			contentType: "application/x-www-form-urlencoded; charset=utf-8",
 			dataType: 'json',
 			data: {first_name: signUpFirstName, last_name: signUpLastName, email: signUpEmail, password: signUpPassword, confirm_password: signUpConfirmPassword},
+			beforeSend: function (xhr) {
+    		xhr.setRequestHeader ("Authorization", "Basic ZGV2ZWxvcGVyLXNpZDpzcGFycm93OA==");
+			},
 			success: function(data) {
 				console.log(JSON.stringify(data));
 				console.log("success");

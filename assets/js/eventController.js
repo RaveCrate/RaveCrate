@@ -36,13 +36,15 @@ app.controller('eventCtrl', function($scope, $http) {
 
   //  console.log(getDateTime());
 
+  $http.defaults.headers.common['Authorization'] = 'Basic ZGV2ZWxvcGVyLXNpZDpzcGFycm93OA==';
+
   $http({
     method: "GET",
     crossDomain: true,
     async: true,
     contentType: "application/x-www-form-urlencoded; charset=utf-8",
     dataType: 'json',
-    url: "http://52.25.111.252/api/v1/events?from_date=" + getDateTime() + "&to_date=2099-12-31%2023:59:59"
+    url: "http://52.25.111.252:8080/api/v2/events?from_date=" + getDateTime() + "&to_date=2099-12-31%2023:59:59"
   }).then(function successCallback(response) {
     // This callback will be called asynchronously
     // when the response is available
