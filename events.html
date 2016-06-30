@@ -115,7 +115,7 @@
 			<!-- Events -->
       <div ng-app="eventGrid" ng-controller="eventCtrl" style="text-transform: uppercase;">
   			<div class="col-lg-3 col-md-4 col-sm-6 col-xs-6 event-img"  ng-repeat="event in list">
-  				<img src="assets/images/events/magic.jpg" alt="" style="height: 125px; width: 200px; border: 5px solid black;"/>
+  				<a href="eventDetail.html"><img src="assets/images/events/magic.jpg" alt="" style="height: 125px; width: 200px; border: 5px solid black;"/></a>
   				<p class="event-name">{{event.title}}</p>
           <a href="http://maps.google.com/?q={{event.address}}, {{event.city}} {{event.state}} {{event.postcode}}"><p class="location"> {{event.address}}, {{event.city}} {{event.state}} {{event.postcode}}</p></a>
   				<p><b>Venue:</b> {{event.location}}</p>
@@ -128,49 +128,35 @@
       </div>
 
 		</div>
-		<footer>
-			<div class="footer-links event-footer">
-				<div class="row">
-					<div class="col-md-3">
-						<h4>Plan Events</h4>
-						<a href="#">non-profit</a><br>
-						<a href="#">sell tickets</a><br>
-						<a href="#">fundraiser</a><br>
-						<a href="#">event planning</a><br>
-						<a href="#">event manager</a><br>
-						<a href="#">family reunions</a><br>
-						<a href="#">event registration</a><br>
-					</div>
-					<div class="col-md-3">
-						<h4>Find a City</h4>
-						<a href="#">chicago</a><br>
-						<a href="#">new york</a><br>
-						<a href="#">las vegas</a><br>
-						<a href="#">san diego</a><br>
-						<a href="#">los angeles</a><br>
-						<a href="#">san francisco</a><br>
-						<a href="#">boston</a><br>
-						<a href="#">miami</a><br>
-					</div>
-					<div class="col-md-3">
-						<h4>Connect With Us</h4>
-						<a href="#">twitter</a><br>
-						<a href="#">google+</a><br>
-						<a href="#">linkedIn</a><br>
-						<a href="#">snapChat</a><br>
-						<a href="#">facebook</a><br>
-						<a href="#">periscope</a><br>
-						<a href="#">instagram</a><br>
-					</div>
-					<div class="col-md-3">
-						<h4>RaveCrate</h4>
-						<a href="#">help</a><br>
-						<a href="#">mobile app</a><br>
-						<a href="#">how it works</a><br>
-					</div>
-				</div>
-			</div>
-		</footer>
+    <footer>
+  		<div class="footer-links">
+  			<div class="row">
+  				<div class="col-md-1"><a href="signup.html">signup</a></div>
+  				<div class="col-md-1"><a href="login.html">login</a></div>
+  				<div class="col-md-1"><a href="eventplanner.html">eventplanner</a></div>
+  				<div class="col-md-1"><a href="freelancer.html">freelancer</a></div>
+  				<div class="col-md-1"><a href="icons.html">icons</a></div>
+  				<div class="col-md-1"><a href="peoples.html">peoples</a></div>
+  				<div class="col-md-1"><a href="events.html">events</a></div>
+  				<div class="col-md-1"><a href="contact-us.html">contact us</a></div>
+  				<div class="col-md-1"><a href="terms-and-conditions.html">terms</a></div>
+  				<div class="col-md-1"><a href="find-a-city.html">find a city</a></div>
+  				<div class="col-md-1"><a href="about.html">about us</a></div>
+  				<div class="col-md-1"><a href="careers.html">careers</a></div>
+  			</div>
+  		</div>
+  		<div class="row bottom-footer">
+  			<div class="copyright col-md-6">
+  				<p>&copy; Copyright 2016 RaveCrate.</p>
+  			</div>
+  			<div class="social-media col-md-6">
+  				<a href="http://www.facebook.com/ravecrate"><i class="fa fa-facebook fa-2x"></i></a>
+  				<a href="http://www.instagram.com/ravecrate"><i class="fa fa-instagram fa-2x"></i></a>
+  				<a href="http://www.twitter.com/ravecrate"><i class="fa fa-twitter fa-2x"></i></a>
+  				<a href="http://www.linkedin.com/ravecrate"><i class="fa fa-linkedin fa-2x"></i></a>
+  			</div>
+  		</div>
+  	</footer>
 	  <!--/footer>
 
 		<!--/#scripts-->
@@ -179,37 +165,27 @@
 	  <script type="text/javascript" src="assets/js/jquery.magnific-popup.min.js"></script>
 	  <script type="text/javascript" src="assets/js/jquery.nav.js"></script>
 	  <script type="text/javascript" src="assets/js/canvas.js"></script>
-	  <!-- <script type="text/javascript" src="assets/js/preloader.js"></script> -->
 	  <script type="text/javascript" src="assets/js/owl.carousel.min.js"></script>
 	  <script type="text/javascript" src="assets/js/wow.min.js"></script>
 	  <script type="text/javascript" src="assets/js/main.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA_TdCN1ceEGZYnSw0wiTG5KcfU8jLdPfI&callback=initMap"
 		async defer></script>
 	  <script type="text/javascript" src="assets/js/eventController.js"></script>
-
-	  <script>
-	    // close = document.getElementById("close");
-	    // close.addEventListener('click', function() {
-	    // note = document.getElementById("note");
-	    // note.style.display = 'none';
-	    // }, false);
-	  </script>
 	  <script src="assets/js/menu.js"></script>
 	  <script>
 	    var slideLeft = new Menu({
-	    wrapper: '#o-wrapper',
-	    type: 'slide-left',
-	    menuOpenerClass: '.c-button',
-	    maskId: '#c-mask'
+  	    wrapper: '#o-wrapper',
+  	    type: 'slide-left',
+  	    menuOpenerClass: '.c-button',
+  	    maskId: '#c-mask'
 	    });
 
 	    var slideLeftBtn = document.querySelector('#c-button--slide-left');
 
 	    slideLeftBtn.addEventListener('click', function(e) {
-	    e.preventDefault;
-	    slideLeft.open();
+  	    e.preventDefault;
+  	    slideLeft.open();
 	    });
-
 	  </script>
 
 	</body>
