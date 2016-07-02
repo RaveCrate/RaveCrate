@@ -67,21 +67,51 @@
 
       <form>
         <div class="form-group row">
-          <label for="inputEmail3" class="col-sm-offset-2 col-sm-2 form-control-label">Name of Event</label>
+          <label class="col-sm-offset-2 col-sm-2 form-control-label">Name of Event</label>
           <div class="col-sm-5">
-            <input type="email" class="form-control" id="inputEmail3" placeholder="Event name">
+            <input type="text" class="form-control" id="event-name" placeholder="Event name">
           </div>
         </div>
         <div class="form-group row">
-          <label for="inputPassword3" class="col-sm-offset-2 col-sm-2 form-control-label">Location</label>
+          <label class="col-sm-offset-2 col-sm-2 form-control-label">Event Venue</label>
           <div class="col-sm-5">
-            <input type="password" class="form-control" id="inputPassword3" placeholder="Location/Address">
+            <input type="text" class="form-control" id="event-venue" placeholder="Event venue">
           </div>
         </div>
         <div class="form-group row">
-          <label for="inputPassword3" class="col-sm-offset-2 col-sm-2 form-control-label">Month</label>
+          <label class="col-sm-offset-2 col-sm-2 form-control-label">Event Host</label>
           <div class="col-sm-5">
-            <select class="form-control" id="exampleSelect1">
+            <input type="text" class="form-control" id="event-host" placeholder="Event hosted by">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-sm-offset-2 col-sm-2 form-control-label">Address</label>
+          <div class="col-sm-5">
+            <input type="text" class="form-control" id="event-address" placeholder="Address">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-sm-offset-2 col-sm-2 form-control-label">City</label>
+          <div class="col-sm-5">
+            <input type="text" class="form-control" id="event-city" placeholder="City">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-sm-offset-2 col-sm-2 form-control-label">State</label>
+          <div class="col-sm-5">
+            <input type="text" class="form-control" id="event-state" placeholder="State">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-sm-offset-2 col-sm-2 form-control-label">Zip Code</label>
+          <div class="col-sm-5">
+            <input type="text" class="form-control" id="event-zip-code" placeholder="Zip Code">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-sm-offset-2 col-sm-2 form-control-label">Month</label>
+          <div class="col-sm-5">
+            <select class="form-control" id="event-month">
               <option>JAN</option>
               <option>FEB</option>
               <option>MAR</option>
@@ -98,32 +128,18 @@
           </div>
         </div>
         <div class="form-group row">
-          <label for="inputPassword3" class="col-sm-offset-2 col-sm-2 form-control-label">Day of the Week</label>
+          <label class="col-sm-offset-2 col-sm-2 form-control-label">Day</label>
           <div class="col-sm-5">
-            <select class="form-control" id="exampleSelect1">
-              <option>SUN</option>
-              <option>MON</option>
-              <option>TUES</option>
-              <option>WED</option>
-              <option>THUR</option>
-              <option>FRI</option>
-              <option>SAT</option>
-            </select>
-          </div>
-        </div>
-        <div class="form-group row">
-          <label for="inputPassword3" class="col-sm-offset-2 col-sm-2 form-control-label">Date</label>
-          <div class="col-sm-5">
-            <select class="form-control" id="exampleSelect1">
-              <option>1</option>
-              <option>2</option>
-              <option>3</option>
-              <option>4</option>
-              <option>5</option>
-              <option>6</option>
-              <option>7</option>
-              <option>8</option>
-              <option>9</option>
+            <select class="form-control" id="event-day">
+              <option>01</option>
+              <option>02</option>
+              <option>03</option>
+              <option>04</option>
+              <option>05</option>
+              <option>06</option>
+              <option>07</option>
+              <option>08</option>
+              <option>09</option>
               <option>10</option>
               <option>11</option>
               <option>12</option>
@@ -150,80 +166,107 @@
           </div>
         </div>
         <div class="form-group row">
-          <label for="inputPassword3" class="col-sm-offset-2 col-sm-2 form-control-label">Start Time</label>
+          <label class="col-sm-offset-2 col-sm-2 form-control-label">Year</label>
           <div class="col-sm-5">
-            <select class="form-control" id="exampleSelect1">
-              <option>12:00 AM</option>
-              <option>1:00 AM</option>
-              <option>2:00 AM</option>
-              <option>3:00 AM</option>
-              <option>4:00 AM</option>
-              <option>5:00 AM</option>
-              <option>6:00 AM</option>
-              <option>7:00 AM</option>
-              <option>8:00 AM</option>
-              <option>9:00 AM</option>
-              <option>10:00 AM</option>
-              <option>11:00 AM</option>
-              <option>12:00 PM</option>
-              <option>1:00 PM</option>
-              <option>2:00 PM</option>
-              <option>3:00 PM</option>
-              <option>4:00 PM</option>
-              <option>5:00 PM</option>
-              <option>6:00 PM</option>
-              <option>7:00 PM</option>
-              <option>8:00 PM</option>
-              <option>9:00 PM</option>
-              <option>10:00 PM</option>
-              <option>11:00 PM</option>
+            <select class="form-control" id="event-year">
+              <option>2016</option>
+              <option>2017</option>
+              <option>2018</option>
+              <option>2019</option>
+              <option>2020</option>
             </select>
           </div>
         </div>
         <div class="form-group row">
-          <label for="inputPassword3" class="col-sm-offset-2 col-sm-2 form-control-label">End Time</label>
+          <label class="col-sm-offset-2 col-sm-2 form-control-label">Start Time (Military Time)</label>
           <div class="col-sm-5">
-            <select class="form-control" id="exampleSelect1">
-              <option>12:00 AM</option>
-              <option>1:00 AM</option>
-              <option>2:00 AM</option>
-              <option>3:00 AM</option>
-              <option>4:00 AM</option>
-              <option>5:00 AM</option>
-              <option>6:00 AM</option>
-              <option>7:00 AM</option>
-              <option>8:00 AM</option>
-              <option>9:00 AM</option>
-              <option>10:00 AM</option>
-              <option>11:00 AM</option>
-              <option>12:00 PM</option>
-              <option>1:00 PM</option>
-              <option>2:00 PM</option>
-              <option>3:00 PM</option>
-              <option>4:00 PM</option>
-              <option>5:00 PM</option>
-              <option>6:00 PM</option>
-              <option>7:00 PM</option>
-              <option>8:00 PM</option>
-              <option>9:00 PM</option>
-              <option>10:00 PM</option>
-              <option>11:00 PM</option>
+            <select class="form-control" id="event-hour">
+              <option>00</option>
+              <option>01</option>
+              <option>02</option>
+              <option>03</option>
+              <option>04</option>
+              <option>05</option>
+              <option>06</option>
+              <option>07</option>
+              <option>08</option>
+              <option>09</option>
+              <option>10</option>
+              <option>11</option>
+              <option>12</option>
+              <option>13</option>
+              <option>14</option>
+              <option>15</option>
+              <option>16</option>
+              <option>17</option>
+              <option>18</option>
+              <option>19</option>
+              <option>20</option>
+              <option>21</option>
+              <option>22</option>
+              <option>23</option>
             </select>
           </div>
         </div>
         <div class="form-group row">
-          <label for="inputEmail3" class="col-sm-offset-2 col-sm-2 form-control-label">Description</label>
+          <label class="col-sm-offset-2 col-sm-2 form-control-label">Minute</label>
           <div class="col-sm-5">
-            <textarea class="form-control" id="exampleTextarea" rows="3" placeholder="Please provide a brief description of your event"></textarea>
+            <select class="form-control" id="event-minute">
+              <option>00</option>
+              <option>05</option>
+              <option>10</option>
+              <option>15</option>
+              <option>20</option>
+              <option>35</option>
+              <option>30</option>
+              <option>35</option>
+              <option>40</option>
+              <option>45</option>
+              <option>50</option>
+              <option>55</option>
+            </select>
           </div>
         </div>
         <div class="form-group row">
-          <label for="inputEmail3" class="col-sm-offset-2 col-sm-2 form-control-label">Add Image</label>
+          <label class="col-sm-offset-2 col-sm-2 form-control-label">Description</label>
+          <div class="col-sm-5">
+            <textarea class="form-control" id="event-description" rows="3" placeholder="Please provide a brief description of your event"></textarea>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-sm-offset-2 col-sm-2 form-control-label">Type of Event</label>
+          <div class="col-sm-5">
+            <select class="form-control" id="event-type">
+              <option>Public</option>
+              <option>Private</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-sm-offset-2 col-sm-2 form-control-label">Fee</label>
+          <div class="col-sm-5">
+            <input type="email" class="form-control" id="event-fee" placeholder="Please state the price to attend the event">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-sm-offset-2 col-sm-2 form-control-label">Contact Phone</label>
+          <div class="col-sm-5">
+            <input type="email" class="form-control" id="event-phone" placeholder="Contact Phone">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-sm-offset-2 col-sm-2 form-control-label">Email</label>
+          <div class="col-sm-5">
+            <input type="email" class="form-control" id="event-email" placeholder="Contact Email">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-sm-offset-2 col-sm-2 form-control-label">Add Image</label>
           <div class="col-sm-5">
             <input type="file" class="form-control-file" id="exampleInputFile">
           </div>
         </div>
-        <a href="events.html"<button type="submit" class="btn btn-primary">Submit</button></a>
+        <button type="submit" class="btn btn-primary" id="create-event">Submit</button>
       </form>
 
       <br>
@@ -294,6 +337,80 @@
 	    });
 
 	  </script>
+    <script type="text/javascript">
+    $('#create-event').on('click', function(e) {
 
+      e.preventDefault();
+
+      var eventName = $('#event-name').val();
+      var eventVenue = $('#event-venue').val();
+      var eventHost = $('#event-host').val();
+      var eventAddress = $('#event-address').val();
+      var eventCity = $('#event-city').val();
+      var eventState = $('#event-state').val();
+      var eventZipCode = $('#event-zip-code').val();
+      var eventMonth = $('#event-month').val();
+      var eventDay = $('#event-day').val();
+      var eventYear = $('#event-year').val();
+      var eventHour = $('#event-hour').val();
+      var eventMinute = $('#event-minute').val();
+      var eventDescription = $('#event-description').val();
+      var eventType = $('#event-type').val();
+      var eventFee = $('#event-fee').val();
+      var eventPhone = $('#event-phone').val();
+      var eventEmail = $('#event-email').val();
+
+      if (eventMonth == 'JAN') {
+        var eventMonthNumerical = '01';
+      } else if (eventMonth == 'FEB') {
+        eventMonthNumerical = '02';
+      } else if (eventMonth == 'MAR') {
+        eventMonthNumerical = '03';
+      } else if (eventMonth == 'APR') {
+        eventMonthNumerical = '04';
+      } else if (eventMonth == 'MAY') {
+        eventMonthNumerical = '05';
+      } else if (eventMonth == 'JUN') {
+        eventMonthNumerical = '06';
+      } else if (eventMonth == 'JUL') {
+        eventMonthNumerical = '07';
+      } else if (eventMonth == 'AUG') {
+        eventMonthNumerical = '08';
+      } else if (eventMonth == 'SEP') {
+        eventMonthNumerical = '09';
+      } else if (eventMonth == 'OCT') {
+        eventMonthNumerical = '10';
+      } else if (eventMonth == 'NOV') {
+        eventMonthNumerical = '11';
+      } else {
+        eventMonthNumerical = '12'
+      }
+
+      var eventStartTime = eventYear + '-' + eventMonthNumerical + '-' + eventDay + ' ' + eventHour + ':' + eventMinute + ':00';
+
+      $.ajax({
+        url: "http://52.41.16.214:8080/api/v2/addEvent",
+        method: "POST",
+        crossDomain: true,
+        contentType: "application/x-www-form-urlencoded; charset=utf-8",
+        dataType: 'json',
+        data: {event_title: eventName, event_location: eventVenue, event_host: eventHost, contact_address: eventAddress, contact_city: eventCity, contact_state: eventState, contact_post_code: eventZipCode, event_date: eventStartTime, event_description: eventDescription, event_type: eventType, event_Fee: eventFee, event_phone: eventPhone, contact_email: eventEmail, contact_name: "John", user_id: 1},
+        beforeSend: function (xhr) {
+          xhr.setRequestHeader ("Authorization", "Basic ZGV2ZWxvcGVyLXNpZDpzcGFycm93OA==");
+        },
+        success: function(data) {
+          console.log(JSON.stringify(data));
+          console.log(eventStartTime);
+          console.log("Event created!");
+
+          // window.location='events.html'
+        },
+      });
+      // if ( userEmail && userPassword ) {
+      //         window.location='events.html'
+      //     }
+    });
+    </script>
+    </script>
 	</body>
 	</html>
