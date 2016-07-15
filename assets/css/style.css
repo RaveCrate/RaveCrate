@@ -1370,3 +1370,19 @@ video {
 .search-freelancers {
   margin: 20px;
 }
+
+/*FREELANCER PROFILE*/
+/*==================================*/
+
+.freelancer-subject {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.freelancer-photos {
+  text-align: center;
+}
+
+.freelancer-video {
+  text-align: center;
+}

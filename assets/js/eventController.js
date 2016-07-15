@@ -44,7 +44,7 @@ app.controller('eventCtrl', function($scope, $http) {
     async: true,
     contentType: "application/x-www-form-urlencoded; charset=utf-8",
     dataType: 'json',
-    url: "http://52.41.16.214:8080/api/v2/events?from_date=" + getDateTime() + "&to_date=2099-12-31%2023:59:59"
+    url: "http://52.41.16.214:8080/api/v2/events?from_date=2016-01-31%2023:59:59&to_date=2099-12-31%2023:59:59"
   }).then(function successCallback(response) {
     // This callback will be called asynchronously
     // when the response is available
