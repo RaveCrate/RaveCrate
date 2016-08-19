@@ -2,16 +2,16 @@ var app = angular.module('eventGrid', []);
 app.controller('eventCtrl', function($scope, $http) {
 
   // getDateTime will calculate the exact time, which will be passed into
-  // GET http://52.25.111.252/api/v1/events" + getDateTime() + "&to_date=2099-12-31%2023:59:59"
+  // GET http://52.41.16.214:8080/api/v2/events" + getDateTime() + "&to_date=2099-12-31%2023:59:59"
   // Every time someone accesses the event page, the most current events will populate the grid
   function getDateTime() {
-    var now     = new Date();
-    var year    = now.getFullYear();
-    var month   = now.getMonth() + 1;
-    var day     = now.getDate();
-    var hour    = now.getHours();
-    var minute  = now.getMinutes();
-    var second  = now.getSeconds();
+    var now = new Date();
+    var year = now.getFullYear();
+    var month = now.getMonth() + 1;
+    var day = now.getDate();
+    var hour = now.getHours();
+    var minute = now.getMinutes();
+    var second = now.getSeconds();
 
     if (month.toString().length == 1) {
       var month = '0' + month;
@@ -34,8 +34,6 @@ app.controller('eventCtrl', function($scope, $http) {
 
   }
 
-  //  console.log(getDateTime());
-
   $http.defaults.headers.common['Authorization'] = 'Basic ZGV2ZWxvcGVyLXNpZDpzcGFycm93OA==';
 
   $http({
@@ -44,12 +42,8 @@ app.controller('eventCtrl', function($scope, $http) {
     async: true,
     contentType: "application/x-www-form-urlencoded; charset=utf-8",
     dataType: 'json',
-    url: "http://52.41.16.214:8080/api/v2/events?from_date=2016-01-31%2023:59:59&to_date=2099-12-31%2023:59:59"
+    url: "http://52.41.16.214:8080/api/v2/events?from_date=2016-06-01%2023:59:59&to_date=2099-12-31%2023:59:59"
   }).then(function successCallback(response) {
-    // This callback will be called asynchronously
-    // when the response is available
-
-    // console.log(response);
 
     // Create an empty array where the event data will go
     var self = this;
@@ -61,7 +55,7 @@ app.controller('eventCtrl', function($scope, $http) {
     };
 
     // sortByDate will sort the events into chronological order
-    var sortByDate = function (property) {
+    var sortByDate = function(property) {
       return function (x, y) {
         return ((x[property] === y[property]) ? 0 : ((x[property] > y[property]) ? 1 : -1));
       };
@@ -74,6 +68,7 @@ app.controller('eventCtrl', function($scope, $http) {
       var eventObject = {};
 
       // The JSON data
+      eventObject.id = response.data.response[i].id;
       eventObject.title = response.data.response[i].event_title;
       eventObject.host = response.data.response[i].event_host;
       eventObject.date = response.data.response[i].event_date;
@@ -90,9 +85,167 @@ app.controller('eventCtrl', function($scope, $http) {
       eventObject.description = response.data.response[i].description;
       eventObject.fee = response.data.response[i].event_fee;
 
+      // Store the JSON date in a variable called convertedDate
+      var convertedDate = eventObject.date;
+
+      // Split convertedDate into individual strings
+      var newDate = convertedDate.split("");
+
+      // Convert the numerical month into the corresponding string
+      if (newDate[5] == "0" && newDate[6] == "1") {
+        newDate.splice(5, 2, "January")
+      } else if (newDate[5] == "0" && newDate[6] == "2") {
+        newDate.splice(5, 2, "February")
+      } else if (newDate[6] == "3") {
+        newDate.splice(5, 2, "March")
+      } else if (newDate[6] == "4") {
+        newDate.splice(5, 2, "April")
+      } else if (newDate[6] == "5") {
+        newDate.splice(5, 2, "May")
+      } else if (newDate[6] == "6") {
+        newDate.splice(5, 2, "June")
+      } else if (newDate[6] == "7") {
+        newDate.splice(5, 2, "July")
+      } else if (newDate[6] == "8") {
+        newDate.splice(5, 2, "August")
+      } else if (newDate[6] == "9") {
+        newDate.splice(5, 2, "September")
+      } else if (newDate[5] == "1" && newDate[6] == "0") {
+        newDate.splice(5, 2, "October")
+      } else if (newDate[5] == "1" && newDate[6] == "1") {
+        newDate.splice(5, 2, "November")
+      } else {
+        newDate.splice(5, 2, "December")
+      }
+
+      // Remove the seconds from the JSON object
+      var removeSeconds= newDate.splice(15, 3);
+
+      // ===================================================================================
+      // USED FOR LATER UPDATE
+
+      // Add AM or PM to newDate
+      // if (newDate[10] >= 1 && newDate[11] > 1) {
+      //   newDate.push('PM')
+      // } else {
+      //   newDate.push('AM')
+      // }
+
+      // Convert the hour from military time
+      // if (newDate[10] == "1" && newDate[11] == "3") {
+      //   newDate[10] == "0" && newDate[11] == "1"
+      // } else if (newDate[10] == "1" && newDate[11] == "4") {
+      //   newDate[10] == "0" && newDate[11] == "2"
+      // } else if (newDate[10] == "1" && newDate[11] == "5") {
+      //   newDate[10] == "0" && newDate[11] == "3"
+      // } else if (newDate[10] == "1" && newDate[11] == "6") {
+      //   newDate[10] == "0" && newDate[11] == "4"
+      // } else if (newDate[10] == "1" && newDate[11] == "7") {
+      //   newDate[10] == "0" && newDate[11] == "5"
+      // } else if (newDate[10] == "1" && newDate[11] == "8") {
+      //   newDate[10] == "0" && newDate[11] == "6"
+      // } else if (newDate[10] == "1" && newDate[11] == "9") {
+      //   newDate[10] == "0" && newDate[11] == "7"
+      // } else if (newDate[10] == "2" && newDate[11] == "0") {
+      //   newDate[10] == "0" && newDate[11] == "8"
+      // } else if (newDate[10] == "2" && newDate[11] == "1") {
+      //   newDate[10] == "0" && newDate[11] == "9"
+      // } else if (newDate[10] == "2" && newDate[11] == "2") {
+      //   newDate[10] == "1" && newDate[11] == "0"
+      // } else if (newDate[10] == "2" && newDate[11] == "3") {
+      //   newDate[10] == "1" && newDate[11] == "1"
+      // }
+      // ==================================================================================
+
+      // Remove the dashes from the JSON object
+      if (newDate[4] == "-") {
+        newDate.splice(4, 1)
+      }
+      if (newDate[5] == "-") {
+        newDate.splice(5, 1)
+      }
+
+      // Remove the month from the newDate and move it to the beginning
+      var moveMonth = newDate.splice(4, 1);
+      newDate.splice(0, 0, moveMonth[0]);
+
+      // Remove the year from the newDate and move it to after the date
+      var moveYear = newDate.splice(1, 4);
+      newDate.splice(3, 0, moveYear[0], moveYear[1], moveYear[2],
+      moveYear[3]);
+
+      // Create a function called myJoin that will allow us to join the individual strings together
+      Array.prototype.myJoin = function(seperator, start, end){
+        if(!start) start = 0;
+        if(!end) end = this.length - 1;
+        end++;
+        return this.slice(start,end).join(seperator);
+      };
+
+      // Create new variables to correctly display the day using myJoin
+      var finalMonth = newDate[0];
+      var finalDay = newDate.myJoin("", 1, 2);
+      var finalCentury = newDate.myJoin("", 3, 4);
+      var finalYear = newDate.myJoin("", 5, 6);
+      var finalHour = newDate.myJoin("", 8, 9);
+      var finalMinute = newDate.myJoin("", 11, 12);
+
+      // Conjoin the newly established variables to display the final date
+      // ex. "August 8, 2016 @ 2:30"
+      var finalDate = finalMonth + " " + finalDay + ", " + finalCentury + finalYear + " @ " + finalHour + ":" + finalMinute;
+
+      // Add finalDate to eventObject and allow the date to be accessed by html
+      eventObject.date = finalDate;
+
       // Push the eventObject into the empty listEvents array
       self.listEvents.push(eventObject);
     }
+
+    // =====================================================================================
+    // WILL BE USED TO GET INFORMATION ABOUT A SINGLE EVENT
+
+    // for (var i = 0; i < self.listEvents.length; i++) {
+    //   var eventId = self.listEvents[i].id;
+    //   console.log(eventId);
+    // }
+    //
+    // $http({
+    //   method: "GET",
+    //   crossDomain: true,
+    //   async: true,
+    //   contentType: "application/x-www-form-urlencoded; charset=utf-8",
+    //   dataType: 'json',
+    //   url: "http://52.41.16.214:8080/api/v2/getEvent/" + eventId
+    // }).then(function successCallback(response) {
+    //
+    //   // for (var i = 0; i < response.data.response.length; i++) {
+    //     console.log("test");
+    //     // Creates an empty object to add the JSON data
+    //     var singleEvent = {};
+    //
+    //     // The JSON data
+    //     singleEvent.id = response.data.response.id;
+    //     singleEvent.title = response.data.response.event_title;
+    //     singleEvent.host = response.data.response.event_host;
+    //     singleEvent.date = response.data.response.event_date;
+    //     singleEvent.location = response.data.response.event_location;
+    //     singleEvent.address = response.data.response.contact_address;
+    //     singleEvent.city = response.data.response.contact_city;
+    //     singleEvent.state = response.data.response.contact_state;
+    //     singleEvent.postcode = response.data.response.contact_post_code;
+    //     singleEvent.latitude = response.data.response.latitude;
+    //     singleEvent.longitude = response.data.response.longitude;
+    //     singleEvent.phone = response.data.response.contact_phone;
+    //     singleEvent.email = response.data.response.contact_email;
+    //     singleEvent.type = response.data.response.event_type.capitalize();
+    //     singleEvent.description = response.data.response.description;
+    //     singleEvent.fee = response.data.response.event_fee;
+    //     console.log(singleEvent.address);
+    //   // }
+    // }, function errorCallback(response) {
+    //   console.log(response);
+    // })
+    // ===================================================================================
 
     // Convert listEvents into $scope so it can be accessed by html files
     $scope.list = self.listEvents;
@@ -100,11 +253,8 @@ app.controller('eventCtrl', function($scope, $http) {
     // This will sort the events by date on the events page by implementing sortByDate
     $scope.list.sort(sortByDate('date'));
 
-    // console.log($scope.list);
-
   }, function errorCallback(response) {
-    // called asynchronously if an error occurs
-    // or server returns response with an error status.
+    console.log(response);
   });
 
 });
