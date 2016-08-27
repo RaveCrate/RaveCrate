@@ -1,5 +1,5 @@
 var app = angular.module('eventGrid', []);
-app.controller('eventCtrl', function($scope, $http) {
+app.controller('eventCtrl', function($scope, $http, $window) {
 
   // getDateTime will calculate the exact time, which will be passed into
   // GET http://52.41.16.214:8080/api/v2/events" + getDateTime() + "&to_date=2099-12-31%2023:59:59"
@@ -54,11 +54,40 @@ app.controller('eventCtrl', function($scope, $http) {
       return this.charAt(0).toUpperCase() + this.slice(1);
     };
 
-    // sortByDate will sort the events into chronological order
-    var sortByDate = function(property) {
-      return function (x, y) {
-        return ((x[property] === y[property]) ? 0 : ((x[property] > y[property]) ? 1 : -1));
-      };
+    // // sortByDate will sort the events into chronological order
+    // var sortByDate = function(property) {
+    //   return function (x, y) {
+    //     return ((x[property] === y[property]) ? 0 : ((x[property] > y[property]) ? 1 : -1));
+    //   };
+    // };
+
+    $window.map = new google.maps.Map(document.getElementById('map'), {
+      center: {
+        lat: 34.0522342,
+        lng: -118.2436849
+      },
+        zoom: 10
+    });
+
+      // HTML5 geolocation
+      navigator.geolocation.getCurrentPosition(function(position) {
+        var pos = {
+          lat: position.coords.latitude,
+          lng: position.coords.longitude
+        };
+
+        // Make the center of the map the user's location
+        map.setCenter(pos);
+
+      });
+
+    // Set the pin image on the map to RaveCrate pin
+    var image = {
+      url: 'assets/images/map-marker.png',
+      size: new google.maps.Size(71, 71),
+      origin: new google.maps.Point(0, 0),
+      anchor: new google.maps.Point(17, 34),
+      scaledSize: new google.maps.Size(70, 70)
     };
 
     //Loop through the event data from the $http request
@@ -84,12 +113,40 @@ app.controller('eventCtrl', function($scope, $http) {
       eventObject.type = response.data.response[i].event_type.capitalize();
       eventObject.description = response.data.response[i].description;
       eventObject.fee = response.data.response[i].event_fee;
+      eventObject.latitude = response.data.response[i].latitude;
+      eventObject.longitude = response.data.response[i].longitude;
 
       // Store the JSON date in a variable called convertedDate
       var convertedDate = eventObject.date;
 
       // Split convertedDate into individual strings
       var newDate = convertedDate.split("");
+      // console.log(newDate);
+
+      // Convert the hour from military time
+      if (newDate[11] == "1" && newDate[12] == "3") {
+        newDate[11] == "0" && newDate[12] == "1";
+      } else if (newDate[11] == "1" && newDate[12] == "4") {
+        newDate[11] == "0" && newDate[12] == "2";
+      } else if (newDate[11] == "1" && newDate[12] == "5") {
+        newDate[11] == "0" && newDate[12] == "3";
+      } else if (newDate[11] == "1" && newDate[12] == "6") {
+        newDate[11] == "0" && newDate[12] == "4";
+      } else if (newDate[11] == "1" && newDate[12] == "7") {
+        newDate[11] == "0" && newDate[12] == "5";
+      } else if (newDate[11] == "1" && newDate[12] == "8") {
+        newDate[11] == "0" && newDate[12] == "6";
+      } else if (newDate[11] == "1" && newDate[12] == "9") {
+        newDate[11] == "0" && newDate[12] == "7";
+      } else if (newDate[11] == "2" && newDate[12] == "0") {
+        newDate[11] == "0" && newDate[12] == "8";
+      } else if (newDate[11] == "2" && newDate[12] == "1") {
+        newDate[11] == "0" && newDate[12] == "9";
+      } else if (newDate[11] == "2" && newDate[12] == "2") {
+        newDate[11] == "1" && newDate[12] == "0";
+      } else if (newDate[11] == "2" && newDate[12] == "3") {
+        newDate[11] == "1" && newDate[12] == "1";
+      }
 
       // Convert the numerical month into the corresponding string
       if (newDate[5] == "0" && newDate[6] == "1") {
@@ -131,30 +188,6 @@ app.controller('eventCtrl', function($scope, $http) {
       //   newDate.push('AM')
       // }
 
-      // Convert the hour from military time
-      // if (newDate[10] == "1" && newDate[11] == "3") {
-      //   newDate[10] == "0" && newDate[11] == "1"
-      // } else if (newDate[10] == "1" && newDate[11] == "4") {
-      //   newDate[10] == "0" && newDate[11] == "2"
-      // } else if (newDate[10] == "1" && newDate[11] == "5") {
-      //   newDate[10] == "0" && newDate[11] == "3"
-      // } else if (newDate[10] == "1" && newDate[11] == "6") {
-      //   newDate[10] == "0" && newDate[11] == "4"
-      // } else if (newDate[10] == "1" && newDate[11] == "7") {
-      //   newDate[10] == "0" && newDate[11] == "5"
-      // } else if (newDate[10] == "1" && newDate[11] == "8") {
-      //   newDate[10] == "0" && newDate[11] == "6"
-      // } else if (newDate[10] == "1" && newDate[11] == "9") {
-      //   newDate[10] == "0" && newDate[11] == "7"
-      // } else if (newDate[10] == "2" && newDate[11] == "0") {
-      //   newDate[10] == "0" && newDate[11] == "8"
-      // } else if (newDate[10] == "2" && newDate[11] == "1") {
-      //   newDate[10] == "0" && newDate[11] == "9"
-      // } else if (newDate[10] == "2" && newDate[11] == "2") {
-      //   newDate[10] == "1" && newDate[11] == "0"
-      // } else if (newDate[10] == "2" && newDate[11] == "3") {
-      //   newDate[10] == "1" && newDate[11] == "1"
-      // }
       // ==================================================================================
 
       // Remove the dashes from the JSON object
@@ -195,10 +228,35 @@ app.controller('eventCtrl', function($scope, $http) {
       var finalDate = finalMonth + " " + finalDay + ", " + finalCentury + finalYear + " @ " + finalHour + ":" + finalMinute;
 
       // Add finalDate to eventObject and allow the date to be accessed by html
-      eventObject.date = finalDate;
-
+      eventObject.eventDate = finalDate;
+      // console.log(eventObject.date);
+      // console.log(eventObject.eventDate);
       // Push the eventObject into the empty listEvents array
       self.listEvents.push(eventObject);
+
+      var marker = new google.maps.Marker({
+        map: map,
+        animation: google.maps.Animation.DROP,
+        position: new google.maps.LatLng(eventObject.latitude, eventObject.longitude),
+        title: eventObject.title,
+        icon: image
+      });
+
+      var infoWindow = new google.maps.InfoWindow();
+
+      var content = '<div class="event-name">' +
+                    '<h4>' + eventObject.title + '</h4>' +
+                    '<p><b>Venue:</b> ' + eventObject.location + '</p>' +
+                    '<p><b>Address:</b> ' + eventObject.address + ', ' + eventObject.city + ' ' + eventObject.state + ' ' + eventObject.postcode + '</p>' +
+                    '<p><b>Date:</b> ' + eventObject.eventDate + '</p>' +
+                    '</div>';
+
+      google.maps.event.addListener(marker, 'click', (function(marker, content, infoWindow){
+        return function() {
+           infoWindow.setContent(content);
+           infoWindow.open(map, marker);
+        };
+      })(marker, content, infoWindow));
     }
 
     // =====================================================================================
@@ -250,88 +308,11 @@ app.controller('eventCtrl', function($scope, $http) {
     // Convert listEvents into $scope so it can be accessed by html files
     $scope.list = self.listEvents;
 
-    // This will sort the events by date on the events page by implementing sortByDate
-    $scope.list.sort(sortByDate('date'));
+    // // This will sort the events by date on the events page by implementing sortByDate
+    // $scope.list.sort(sortByDate('date'));
 
   }, function errorCallback(response) {
     console.log(response);
   });
 
 });
-
-// Initialize new Google Maps
-function initMap() {
-  var map = new google.maps.Map(document.getElementById('map'), {
-    center: {lat: 34.0522342, lng: -118.2436849},
-    zoom: 10
-  });
-
-  // Set the pin image on the map to RaveCrate pin
-  var image = {
-    url: 'assets/images/map-marker.png',
-    size: new google.maps.Size(71, 71),
-    origin: new google.maps.Point(0, 0),
-    anchor: new google.maps.Point(17, 34),
-    scaledSize: new google.maps.Size(70, 70)
-  };
-
-  // Create a new pin for Avalon Nightclub
-  var markerAvalon = new google.maps.Marker({
-    map: map,
-    animation: google.maps.Animation.DROP,
-    position: new google.maps.LatLng(34.102719, -118.327169),
-    icon: image
-  });
-
-  // Create a new pin for Zanzibar
-  var markerZanzibar = new google.maps.Marker({
-    map: map,
-    animation: google.maps.Animation.DROP,
-    position: new google.maps.LatLng(34.01858, -118.495426),
-    icon: image
-  });
-
-  // Create a new pin for Exchange LA
-  var markerExchange = new google.maps.Marker({
-    map: map,
-    animation: google.maps.Animation.DROP,
-    position: new google.maps.LatLng(34.045254, -118.251139),
-    icon: image
-    });
-
-  // Create a new pin for US Bank Tower
-  var markerUSBank = new google.maps.Marker({
-    map: map,
-    animation: google.maps.Animation.DROP,
-    position: new google.maps.LatLng(34.05112, -118.254322),
-    icon: image
-  });
-
-  // Create a new pin for Coliseum Stadium
-  var markerColiseum = new google.maps.Marker({
-    map: map,
-    animation: google.maps.Animation.DROP,
-    position: new google.maps.LatLng(34.012852, -118.284539),
-    icon: image
-  });
-
-  // Adds the markers to the map by calling setMap();
-  markerAvalon.setMap(map);
-  markerZanzibar.setMap(map);
-  markerExchange.setMap(map);
-  markerUSBank.setMap(map);
-  markerColiseum.setMap(map);
-
-  // HTML5 geolocation
-  navigator.geolocation.getCurrentPosition(function(position) {
-    var pos = {
-      lat: position.coords.latitude,
-      lng: position.coords.longitude
-    };
-
-    // Make the center of the map the user's location
-    map.setCenter(pos);
-
-  });
-
-}
