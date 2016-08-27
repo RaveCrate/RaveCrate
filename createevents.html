@@ -265,8 +265,8 @@
         </div>
         <button type="submit" class="btn btn-primary" id="create-event">Submit</button>
       </form>
-      <p class="lat" hidden></p>
-      <p class="lng" hidden></p>
+      <br>
+      <p class="loading"></p>
       <br>
       <br>
 
@@ -341,157 +341,161 @@
 
       e.preventDefault();
 
-      var eventName = $('#event-name').val();
-      var eventVenue = $('#event-venue').val();
-      var eventHost = $('#event-host').val();
+      $('.loading').append('Please Wait...');
+
       var eventAddress = $('#event-address').val();
       var eventCity = $('#event-city').val();
       var eventState = $('#event-state').val();
       var eventZipCode = $('#event-zip-code').val();
-      var eventMonth = $('#event-month').val();
-      var eventDay = $('#event-day').val();
-      var eventYear = $('#event-year').val();
-      var eventHour = $('#event-hour').val();
-      var eventMinute = $('#event-minute').val();
-      var eventAmPm = $('#am-pm').val();
-      var eventDescription = $('#event-description').val();
-      var eventType = $('#event-type').val();
-      var eventFee = $('#event-fee').val();
-      var eventPhone = $('#event-phone').val();
-      var eventEmail = $('#event-email').val();
 
       // Convert the listed variables into the proper format to query Google Maps Geocoder
-      // var geocoderAddress = eventAddress + ", " + eventCity + " " + eventState + " " + eventZipCode;
-      var geocoderAddress = "618 S SPRING ST, LOS ANGELES CA 90014";
+      var geocoderAddress = eventAddress + ", " + eventCity + " " + eventState + " " + eventZipCode;
 
       var geocoder = new google.maps.Geocoder();
 
       var coordinates = [];
-      console.log(coordinates);
 
       geocoder.geocode({'address': geocoderAddress}, function(results, status) {
-        // console.log(results[0].formatted_address);
-        // console.log(status);
         if (status == google.maps.GeocoderStatus.OK) {
           var latlng = {};
           latlng.getLatitude = results[0].geometry.location.lat();
           latlng.getLongitude = results[0].geometry.location.lng();
-          console.log(latlng.getLatitude);
-          console.log(latlng.getLongitude);
-          $('.lat').html(latlng.getLatitude);
-          $('.lng').html(latlng.getLongitude);
-          coordinates.push({latitude: latlng.getLatitude, longitude: latlng.getLongitude})
+          coordinates.push({latitude: latlng.getLatitude, longitude: latlng.getLongitude});
+        } else {
+          window.alert('Google Maps was unable to locate your address.\nThe error code is: ' + status + '.\nPlease reload the page and resubmit the form with a valid address.');
         }
       });
 
-      // if statement to convert
-      if (eventMonth == 'JAN') {
-        var eventMonthNumerical = '01';
-      } else if (eventMonth == 'FEB') {
-        eventMonthNumerical = '02';
-      } else if (eventMonth == 'MAR') {
-        eventMonthNumerical = '03';
-      } else if (eventMonth == 'APR') {
-        eventMonthNumerical = '04';
-      } else if (eventMonth == 'MAY') {
-        eventMonthNumerical = '05';
-      } else if (eventMonth == 'JUN') {
-        eventMonthNumerical = '06';
-      } else if (eventMonth == 'JUL') {
-        eventMonthNumerical = '07';
-      } else if (eventMonth == 'AUG') {
-        eventMonthNumerical = '08';
-      } else if (eventMonth == 'SEP') {
-        eventMonthNumerical = '09';
-      } else if (eventMonth == 'OCT') {
-        eventMonthNumerical = '10';
-      } else if (eventMonth == 'NOV') {
-        eventMonthNumerical = '11';
-      } else if (eventMonth == 'DEC') {
-        eventMonthNumerical = '12'
-      } else {
-        alert('Please select a valid month.')
-      }
+      setTimeout(function() {
+        var eventName = $('#event-name').val();
+        var eventVenue = $('#event-venue').val();
+        var eventHost = $('#event-host').val();
+        var eventMonth = $('#event-month').val();
+        var eventDay = $('#event-day').val();
+        var eventYear = $('#event-year').val();
+        var eventHour = $('#event-hour').val();
+        var eventMinute = $('#event-minute').val();
+        var eventAmPm = $('#am-pm').val();
+        var eventDescription = $('#event-description').val();
+        var eventType = $('#event-type').val();
+        var eventFee = $('#event-fee').val();
+        var eventPhone = $('#event-phone').val();
+        var eventEmail = $('#event-email').val();
 
-      // if statement to convert 12-hour clock to military time
-      if (eventHour == 1 && eventAmPm == 'AM') {
-        var eventTime = '01:' + eventMinute + ':00';
-      } else if (eventHour == 2 && eventAmPm == 'AM') {
-        eventTime = '02:' + eventMinute + ':00';
-      } else if (eventHour == 3 && eventAmPm == 'AM') {
-        eventTime = '03:' + eventMinute + ':00';
-      } else if (eventHour == 4 && eventAmPm == 'AM') {
-        eventTime = '04:' + eventMinute + ':00';
-      } else if (eventHour == 5 && eventAmPm == 'AM') {
-        eventTime = '05:' + eventMinute + ':00';
-      } else if (eventHour == 6 && eventAmPm == 'AM') {
-        eventTime = '06:' + eventMinute + ':00';
-      } else if (eventHour == 7 && eventAmPm == 'AM') {
-        eventTime = '07:' + eventMinute + ':00';
-      } else if (eventHour == 8 && eventAmPm == 'AM') {
-        eventTime = '08:' + eventMinute + ':00';
-      } else if (eventHour == 9 && eventAmPm == 'AM') {
-        eventTime = '09:' + eventMinute + ':00';
-      } else if (eventHour == 10 && eventAmPm == 'AM') {
-        eventTime = '10:' + eventMinute + ':00';
-      } else if (eventHour == 11 && eventAmPm == 'AM') {
-        eventTime = '11:' + eventMinute + ':00';
-      } else if (eventHour == 12 && eventAmPm == 'AM') {
-        eventTime = '00:' + eventMinute + ':00';
-      }
+        // if statement to convert
+        if (eventMonth == 'JAN') {
+          var eventMonthNumerical = '01';
+        } else if (eventMonth == 'FEB') {
+          eventMonthNumerical = '02';
+        } else if (eventMonth == 'MAR') {
+          eventMonthNumerical = '03';
+        } else if (eventMonth == 'APR') {
+          eventMonthNumerical = '04';
+        } else if (eventMonth == 'MAY') {
+          eventMonthNumerical = '05';
+        } else if (eventMonth == 'JUN') {
+          eventMonthNumerical = '06';
+        } else if (eventMonth == 'JUL') {
+          eventMonthNumerical = '07';
+        } else if (eventMonth == 'AUG') {
+          eventMonthNumerical = '08';
+        } else if (eventMonth == 'SEP') {
+          eventMonthNumerical = '09';
+        } else if (eventMonth == 'OCT') {
+          eventMonthNumerical = '10';
+        } else if (eventMonth == 'NOV') {
+          eventMonthNumerical = '11';
+        } else if (eventMonth == 'DEC') {
+          eventMonthNumerical = '12'
+        } else {
+          window.alert('Please select a valid month.')
+        };
 
-      else if (eventHour == 12 && eventAmPm == 'PM') {
-        eventTime = '12:' + eventMinute + ':00';
-      } else if (eventHour == 1 && eventAmPm == 'PM') {
-        eventTime = '13:' + eventMinute + ':00';
-      } else if (eventHour == 2 && eventAmPm == 'PM') {
-        eventTime = '14:' + eventMinute + ':00';
-      } else if (eventHour == 3 && eventAmPm == 'PM') {
-        eventTime = '15:' + eventMinute + ':00';
-      } else if (eventHour == 4 && eventAmPm == 'PM') {
-        eventTime = '16:' + eventMinute + ':00';
-      } else if (eventHour == 5 && eventAmPm == 'PM') {
-        eventTime = '17:' + eventMinute + ':00';
-      } else if (eventHour == 6 && eventAmPm == 'PM') {
-        eventTime = '18:' + eventMinute + ':00';
-      } else if (eventHour == 7 && eventAmPm == 'PM') {
-        eventTime = '19:' + eventMinute + ':00';
-      } else if (eventHour == 8 && eventAmPm == 'PM') {
-        eventTime = '20:' + eventMinute + ':00';
-      } else if (eventHour == 9 && eventAmPm == 'PM') {
-        eventTime = '21:' + eventMinute + ':00';
-      } else if (eventHour == 10 && eventAmPm == 'PM') {
-        eventTime = '22:' + eventMinute + ':00';
-      } else if (eventHour == 11 && eventAmPm == 'PM') {
-        eventTime = '23:' + eventMinute + ':00';
-      } else {
-        window.alert('Please select a valid time.');
-      }
+        // if statement to convert 12-hour clock to military time
+        if (eventHour == 1 && eventAmPm == 'AM') {
+          var eventTime = '01:' + eventMinute + ':00';
+        } else if (eventHour == 2 && eventAmPm == 'AM') {
+          eventTime = '02:' + eventMinute + ':00';
+        } else if (eventHour == 3 && eventAmPm == 'AM') {
+          eventTime = '03:' + eventMinute + ':00';
+        } else if (eventHour == 4 && eventAmPm == 'AM') {
+          eventTime = '04:' + eventMinute + ':00';
+        } else if (eventHour == 5 && eventAmPm == 'AM') {
+          eventTime = '05:' + eventMinute + ':00';
+        } else if (eventHour == 6 && eventAmPm == 'AM') {
+          eventTime = '06:' + eventMinute + ':00';
+        } else if (eventHour == 7 && eventAmPm == 'AM') {
+          eventTime = '07:' + eventMinute + ':00';
+        } else if (eventHour == 8 && eventAmPm == 'AM') {
+          eventTime = '08:' + eventMinute + ':00';
+        } else if (eventHour == 9 && eventAmPm == 'AM') {
+          eventTime = '09:' + eventMinute + ':00';
+        } else if (eventHour == 10 && eventAmPm == 'AM') {
+          eventTime = '10:' + eventMinute + ':00';
+        } else if (eventHour == 11 && eventAmPm == 'AM') {
+          eventTime = '11:' + eventMinute + ':00';
+        } else if (eventHour == 12 && eventAmPm == 'AM') {
+          eventTime = '00:' + eventMinute + ':00';
+        }
 
-      // final date/time to be sent to back end for event_date
-      var eventStartTime = eventYear + '-' + eventMonthNumerical + '-' + eventDay + ' ' + eventTime;
+        else if (eventHour == 12 && eventAmPm == 'PM') {
+          eventTime = '12:' + eventMinute + ':00';
+        } else if (eventHour == 1 && eventAmPm == 'PM') {
+          eventTime = '13:' + eventMinute + ':00';
+        } else if (eventHour == 2 && eventAmPm == 'PM') {
+          eventTime = '14:' + eventMinute + ':00';
+        } else if (eventHour == 3 && eventAmPm == 'PM') {
+          eventTime = '15:' + eventMinute + ':00';
+        } else if (eventHour == 4 && eventAmPm == 'PM') {
+          eventTime = '16:' + eventMinute + ':00';
+        } else if (eventHour == 5 && eventAmPm == 'PM') {
+          eventTime = '17:' + eventMinute + ':00';
+        } else if (eventHour == 6 && eventAmPm == 'PM') {
+          eventTime = '18:' + eventMinute + ':00';
+        } else if (eventHour == 7 && eventAmPm == 'PM') {
+          eventTime = '19:' + eventMinute + ':00';
+        } else if (eventHour == 8 && eventAmPm == 'PM') {
+          eventTime = '20:' + eventMinute + ':00';
+        } else if (eventHour == 9 && eventAmPm == 'PM') {
+          eventTime = '21:' + eventMinute + ':00';
+        } else if (eventHour == 10 && eventAmPm == 'PM') {
+          eventTime = '22:' + eventMinute + ':00';
+        } else if (eventHour == 11 && eventAmPm == 'PM') {
+          eventTime = '23:' + eventMinute + ':00';
+        } else {
+          window.alert('Please select a valid time.');
+        };
 
-      $.ajax({
-        url: "http://52.41.16.214:8080/api/v2/addEvent",
-        method: "POST",
-        crossDomain: true,
-        contentType: "application/x-www-form-urlencoded; charset=utf-8",
-        dataType: 'json',
-        data: {event_title: eventName, event_location: eventVenue, event_host: eventHost, contact_address: eventAddress, latitude: getLatitude, longitude: getLongitude, contact_city: eventCity, contact_state: eventState, contact_post_code: eventZipCode, event_date: eventStartTime, event_description: eventDescription, event_type: eventType, event_Fee: eventFee, event_phone: eventPhone, contact_email: eventEmail, contact_name: "John", user_id: 1},
-        beforeSend: function (xhr) {
-          xhr.setRequestHeader ("Authorization", "Basic ZGV2ZWxvcGVyLXNpZDpzcGFycm93OA==");
-        },
-        success: function(data) {
-          console.log(JSON.stringify(data));
-          console.log(eventStartTime);
-          console.log("Event created!");
+        // final date/time to be sent to back end for event_date
+        var eventStartTime = eventYear + '-' + eventMonthNumerical + '-' + eventDay + ' ' + eventTime;
 
-          // window.location='events.html'
-        },
-      });
-      // if ( userEmail && userPassword ) {
-      //         window.location='events.html'
-      //     }
+        $.ajax({
+          url: "http://52.41.16.214:8080/api/v2/addEvent",
+          method: "POST",
+          crossDomain: true,
+          contentType: "application/x-www-form-urlencoded; charset=utf-8",
+          dataType: 'json',
+          data: {event_title: eventName, event_location: eventVenue, event_host: eventHost, contact_address: eventAddress, contact_city: eventCity, contact_state: eventState, contact_post_code: eventZipCode, latitude: coordinates[0].latitude, longitude: coordinates[0].longitude, event_date: eventStartTime, event_description: eventDescription, event_type: eventType, event_Fee: eventFee, contact_phone: eventPhone, contact_email: eventEmail, contact_name: "John", user_id: 1},
+          beforeSend: function (xhr) {
+            xhr.setRequestHeader ("Authorization", "Basic ZGV2ZWxvcGVyLXNpZDpzcGFycm93OA==");
+          },
+          success: function(data) {
+            console.log(JSON.stringify(data));
+            console.log(eventStartTime);
+            console.log("Event created!");
+            if (data.status == 'error') {
+              for (var i = 0; i < data.response.length; i++) {
+                console.log(data.response[i].error);
+                $('.loading').replaceWith('There was an error when you submitted the form. Please reload the page and fill the form out again.');
+              }
+
+            } else {
+              $('.loading').replaceWith('Event successfully created! Please <a href="events.html">CLICK HERE</a> to see your newly created event as well as other events created with RaveCrate!');
+            }
+          }
+        });
+
+      }, 2500);
     });
     </script>
     </script>

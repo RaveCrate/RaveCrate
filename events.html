@@ -33,7 +33,7 @@
 	</style>
 </head><!--/head-->
 <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
-<body>
+<body ng-app="eventGrid" ng-controller="eventCtrl" >
 
   <div id="home-section" class="image-bg">
 
@@ -113,14 +113,14 @@
 			</div><!-- /.row -->
 
 			<!-- Events -->
-      <div ng-app="eventGrid" ng-controller="eventCtrl" style="text-transform: uppercase;">
-  			<div class="col-lg-3 col-md-4 col-sm-6 col-xs-6 event-img"  ng-repeat="event in list">
+      <div style="text-transform: uppercase;">
+  			<div class="col-lg-3 col-md-4 col-sm-6 col-xs-6 event-img"  ng-repeat="event in list|orderBy:'date'">
   				<a href="eventDetail.html"><img src="assets/images/events/magic.jpg" alt="" style="height: 125px; width: 200px; border: 5px solid black;"/></a>
   				<p class="event-name">{{event.title}}</p>
           <a href="http://maps.google.com/?q={{event.address}}, {{event.city}} {{event.state}} {{event.postcode}}"><p class="location"> {{event.address}}, {{event.city}} {{event.state}} {{event.postcode}}</p></a>
   				<p><b>Venue:</b> {{event.location}}</p>
   				<p><b>Hosted by:</b> {{event.host}}</p>
-  				<p><b>When:</b> {{event.date}} PM</p>
+  				<p><b>When:</b> {{event.eventDate}} PM</p>
   				<p><b>Type:</b> {{event.type}}</p>
   				<p><b>Phone:</b> {{event.phone}}</p>
   				<a href="mailto:{{event.email}}"><p><b>Email:</b> {{event.email}}</p></a>
@@ -168,7 +168,7 @@
 	  <script type="text/javascript" src="assets/js/owl.carousel.min.js"></script>
 	  <script type="text/javascript" src="assets/js/wow.min.js"></script>
 	  <script type="text/javascript" src="assets/js/main.js"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA_TdCN1ceEGZYnSw0wiTG5KcfU8jLdPfI&callback=initMap"
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA_TdCN1ceEGZYnSw0wiTG5KcfU8jLdPfI"
 		async defer></script>
 	  <script type="text/javascript" src="assets/js/eventController.js"></script>
 	  <script src="assets/js/menu.js"></script>
