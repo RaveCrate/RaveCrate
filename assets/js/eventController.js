@@ -69,17 +69,15 @@ app.controller('eventCtrl', function($scope, $http, $window) {
         zoom: 10
     });
 
-      // HTML5 geolocation
-      navigator.geolocation.getCurrentPosition(function(position) {
-        var pos = {
-          lat: position.coords.latitude,
-          lng: position.coords.longitude
-        };
-
-        // Make the center of the map the user's location
-        map.setCenter(pos);
-
-      });
+    // HTML5 geolocation
+    navigator.geolocation.getCurrentPosition(function(position) {
+      var pos = {
+        lat: position.coords.latitude,
+        lng: position.coords.longitude
+      };
+      // Make the center of the map the user's location
+      map.setCenter(pos);
+    });
 
     // Set the pin image on the map to RaveCrate pin
     var image = {
@@ -111,42 +109,14 @@ app.controller('eventCtrl', function($scope, $http, $window) {
       eventObject.phone = response.data.response[i].contact_phone;
       eventObject.email = response.data.response[i].contact_email;
       eventObject.type = response.data.response[i].event_type.capitalize();
-      eventObject.description = response.data.response[i].description;
+      eventObject.description = response.data.response[i].event_description;
       eventObject.fee = response.data.response[i].event_fee;
-      eventObject.latitude = response.data.response[i].latitude;
-      eventObject.longitude = response.data.response[i].longitude;
 
       // Store the JSON date in a variable called convertedDate
       var convertedDate = eventObject.date;
 
       // Split convertedDate into individual strings
       var newDate = convertedDate.split("");
-      // console.log(newDate);
-
-      // Convert the hour from military time
-      if (newDate[11] == "1" && newDate[12] == "3") {
-        newDate[11] == "0" && newDate[12] == "1";
-      } else if (newDate[11] == "1" && newDate[12] == "4") {
-        newDate[11] == "0" && newDate[12] == "2";
-      } else if (newDate[11] == "1" && newDate[12] == "5") {
-        newDate[11] == "0" && newDate[12] == "3";
-      } else if (newDate[11] == "1" && newDate[12] == "6") {
-        newDate[11] == "0" && newDate[12] == "4";
-      } else if (newDate[11] == "1" && newDate[12] == "7") {
-        newDate[11] == "0" && newDate[12] == "5";
-      } else if (newDate[11] == "1" && newDate[12] == "8") {
-        newDate[11] == "0" && newDate[12] == "6";
-      } else if (newDate[11] == "1" && newDate[12] == "9") {
-        newDate[11] == "0" && newDate[12] == "7";
-      } else if (newDate[11] == "2" && newDate[12] == "0") {
-        newDate[11] == "0" && newDate[12] == "8";
-      } else if (newDate[11] == "2" && newDate[12] == "1") {
-        newDate[11] == "0" && newDate[12] == "9";
-      } else if (newDate[11] == "2" && newDate[12] == "2") {
-        newDate[11] == "1" && newDate[12] == "0";
-      } else if (newDate[11] == "2" && newDate[12] == "3") {
-        newDate[11] == "1" && newDate[12] == "1";
-      }
 
       // Convert the numerical month into the corresponding string
       if (newDate[5] == "0" && newDate[6] == "1") {
@@ -178,17 +148,12 @@ app.controller('eventCtrl', function($scope, $http, $window) {
       // Remove the seconds from the JSON object
       var removeSeconds= newDate.splice(15, 3);
 
-      // ===================================================================================
-      // USED FOR LATER UPDATE
-
       // Add AM or PM to newDate
-      // if (newDate[10] >= 1 && newDate[11] > 1) {
-      //   newDate.push('PM')
-      // } else {
-      //   newDate.push('AM')
-      // }
-
-      // ==================================================================================
+      if (newDate[10] >= 1 && newDate[11] > 1) {
+        newDate.push('PM')
+      } else {
+        newDate.push('AM')
+      }
 
       // Remove the dashes from the JSON object
       if (newDate[4] == "-") {
@@ -216,21 +181,66 @@ app.controller('eventCtrl', function($scope, $http, $window) {
       };
 
       // Create new variables to correctly display the day using myJoin
-      var finalMonth = newDate[0];
-      var finalDay = newDate.myJoin("", 1, 2);
-      var finalCentury = newDate.myJoin("", 3, 4);
-      var finalYear = newDate.myJoin("", 5, 6);
-      var finalHour = newDate.myJoin("", 8, 9);
-      var finalMinute = newDate.myJoin("", 11, 12);
+      var finalMonth = newDate[0]; //ex. August
+      var finalDay = newDate.myJoin("", 1, 2); // ex. 8
+      var finalCentury = newDate.myJoin("", 3, 4); // ex. 20
+      var finalYear = newDate.myJoin("", 5, 6); // ex. 16
+      var finalHour = newDate.myJoin("", 8, 9); // ex. 14
+      var finalMinute = newDate.myJoin("", 11, 12); // ex. 30
+      var finalAmPm = newDate[13]; // ex PM
+
+      // Convert finalHour from military time to standard time
+      if (finalHour == 00) {
+        finalHour = 12;
+      } else if (finalHour == 01) {
+        finalHour = 1;
+      } else if (finalHour == 02) {
+        finalHour = 2;
+      } else if (finalHour == 03) {
+        finalHour = 3;
+      } else if (finalHour == 04) {
+        finalHour = 4;
+      } else if (finalHour == 05) {
+        finalHour = 5;
+      } else if (finalHour == 06) {
+        finalHour = 6;
+      } else if (finalHour == 07) {
+        finalHour = 7;
+      } else if (finalHour == 08) {
+        finalHour = 8;
+      } else if (finalHour == 09) {
+        finalHour = 9;
+      } else if (finalHour == 13) {
+        finalHour = 1;
+      } else if (finalHour == 14) {
+        finalHour = 2;
+      } else if (finalHour == 15) {
+        finalHour = 3;
+      } else if (finalHour == 16) {
+        finalHour = 4;
+      } else if (finalHour == 17) {
+        finalHour = 5;
+      } else if (finalHour == 18) {
+        finalHour = 6;
+      } else if (finalHour == 19) {
+        finalHour = 7;
+      } else if (finalHour == 20) {
+        finalHour = 8;
+      } else if (finalHour == 21) {
+        finalHour = 9;
+      } else if (finalHour == 22) {
+        finalHour = 10;
+      } else if (finalHour == 23) {
+        finalHour = 11;
+      }
 
       // Conjoin the newly established variables to display the final date
-      // ex. "August 8, 2016 @ 2:30"
-      var finalDate = finalMonth + " " + finalDay + ", " + finalCentury + finalYear + " @ " + finalHour + ":" + finalMinute;
+      // ex. "August 8, 2016 @ 2:30 PM"
+      var finalDate = finalMonth + " " + finalDay + ", " + finalCentury + finalYear + " @ " + finalHour + ":" + finalMinute + " " + finalAmPm;
 
       // Add finalDate to eventObject and allow the date to be accessed by html
       eventObject.eventDate = finalDate;
-      // console.log(eventObject.date);
-      // console.log(eventObject.eventDate);
+
       // Push the eventObject into the empty listEvents array
       self.listEvents.push(eventObject);
 
@@ -249,6 +259,7 @@ app.controller('eventCtrl', function($scope, $http, $window) {
                     '<p><b>Venue:</b> ' + eventObject.location + '</p>' +
                     '<p><b>Address:</b> ' + eventObject.address + ', ' + eventObject.city + ' ' + eventObject.state + ' ' + eventObject.postcode + '</p>' +
                     '<p><b>Date:</b> ' + eventObject.eventDate + '</p>' +
+                    '<p><b>Description:</b> ' + eventObject.description + '</p>' +
                     '</div>';
 
       google.maps.event.addListener(marker, 'click', (function(marker, content, infoWindow){
