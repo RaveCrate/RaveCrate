@@ -32,10 +32,12 @@ app.controller('eventCtrl', function($scope, $http, $window) {
     var dateTime = year + '/' + month + '/' + day + ' ' + hour + ':' + minute + ':' + second;
       return dateTime;
 
-  }
+  };
 
+  // Set the header to gain access to the API
   $http.defaults.headers.common['Authorization'] = 'Basic ZGV2ZWxvcGVyLXNpZDpzcGFycm93OA==';
 
+  // Make a GET request to the API to view all of the events
   $http({
     method: "GET",
     crossDomain: true,
@@ -54,13 +56,7 @@ app.controller('eventCtrl', function($scope, $http, $window) {
       return this.charAt(0).toUpperCase() + this.slice(1);
     };
 
-    // // sortByDate will sort the events into chronological order
-    // var sortByDate = function(property) {
-    //   return function (x, y) {
-    //     return ((x[property] === y[property]) ? 0 : ((x[property] > y[property]) ? 1 : -1));
-    //   };
-    // };
-
+    // Create a new Google Map and define the center of the map and zoom level
     $window.map = new google.maps.Map(document.getElementById('map'), {
       center: {
         lat: 34.0522342,
@@ -79,7 +75,7 @@ app.controller('eventCtrl', function($scope, $http, $window) {
       map.setCenter(pos);
     });
 
-    // Set the pin image on the map to RaveCrate pin
+    // Set the marker image on the map to the RaveCrate marker
     var image = {
       url: 'assets/images/map-marker.png',
       size: new google.maps.Size(71, 71),
@@ -143,7 +139,7 @@ app.controller('eventCtrl', function($scope, $http, $window) {
         newDate.splice(5, 2, "November")
       } else {
         newDate.splice(5, 2, "December")
-      }
+      };
 
       // Remove the seconds from the JSON object
       var removeSeconds= newDate.splice(15, 3);
@@ -153,15 +149,15 @@ app.controller('eventCtrl', function($scope, $http, $window) {
         newDate.push('PM')
       } else {
         newDate.push('AM')
-      }
+      };
 
       // Remove the dashes from the JSON object
       if (newDate[4] == "-") {
         newDate.splice(4, 1)
-      }
+      };
       if (newDate[5] == "-") {
         newDate.splice(5, 1)
-      }
+      };
 
       // Remove the month from the newDate and move it to the beginning
       var moveMonth = newDate.splice(4, 1);
@@ -172,67 +168,49 @@ app.controller('eventCtrl', function($scope, $http, $window) {
       newDate.splice(3, 0, moveYear[0], moveYear[1], moveYear[2],
       moveYear[3]);
 
-      // Create a function called myJoin that will allow us to join the individual strings together
-      Array.prototype.myJoin = function(seperator, start, end){
+      // Create a function called joinDate that will allow us to join the individual strings together
+      Array.prototype.joinDate = function(seperator, start, end){
         if(!start) start = 0;
         if(!end) end = this.length - 1;
         end++;
         return this.slice(start,end).join(seperator);
       };
 
-      // Create new variables to correctly display the day using myJoin
+      // Create new variables to correctly display the day using joinDate
       var finalMonth = newDate[0]; //ex. August
-      var finalDay = newDate.myJoin("", 1, 2); // ex. 8
-      var finalCentury = newDate.myJoin("", 3, 4); // ex. 20
-      var finalYear = newDate.myJoin("", 5, 6); // ex. 16
-      var finalHour = newDate.myJoin("", 8, 9); // ex. 14
-      var finalMinute = newDate.myJoin("", 11, 12); // ex. 30
-      var finalAmPm = newDate[13]; // ex PM
+      var finalDay = newDate.joinDate("", 1, 2); // ex. 8
+      var finalCentury = newDate.joinDate("", 3, 4); // ex. 20
+      var finalYear = newDate.joinDate("", 5, 6); // ex. 16
+      var finalHour = newDate.joinDate("", 8, 9); // ex. 14
+      var finalMinute = newDate.joinDate("", 11, 12); // ex. 30
+      var finalAmPm = newDate[13]; // ex. PM
 
       // Convert finalHour from military time to standard time
       if (finalHour == 00) {
         finalHour = 12;
-      } else if (finalHour == 01) {
+      } else if (finalHour == 01 || finalHour == 13) {
         finalHour = 1;
-      } else if (finalHour == 02) {
+      } else if (finalHour == 02 || finalHour == 14) {
         finalHour = 2;
-      } else if (finalHour == 03) {
+      } else if (finalHour == 03 || finalHour == 15) {
         finalHour = 3;
-      } else if (finalHour == 04) {
+      } else if (finalHour == 04 || finalHour == 16) {
         finalHour = 4;
-      } else if (finalHour == 05) {
+      } else if (finalHour == 05 || finalHour == 17) {
         finalHour = 5;
-      } else if (finalHour == 06) {
+      } else if (finalHour == 06 || finalHour == 18) {
         finalHour = 6;
-      } else if (finalHour == 07) {
+      } else if (finalHour == 07 || finalHour == 19) {
         finalHour = 7;
-      } else if (finalHour == 08) {
+      } else if (finalHour == 08 || finalHour == 20) {
         finalHour = 8;
-      } else if (finalHour == 09) {
-        finalHour = 9;
-      } else if (finalHour == 13) {
-        finalHour = 1;
-      } else if (finalHour == 14) {
-        finalHour = 2;
-      } else if (finalHour == 15) {
-        finalHour = 3;
-      } else if (finalHour == 16) {
-        finalHour = 4;
-      } else if (finalHour == 17) {
-        finalHour = 5;
-      } else if (finalHour == 18) {
-        finalHour = 6;
-      } else if (finalHour == 19) {
-        finalHour = 7;
-      } else if (finalHour == 20) {
-        finalHour = 8;
-      } else if (finalHour == 21) {
+      } else if (finalHour == 09 || finalHour == 21) {
         finalHour = 9;
       } else if (finalHour == 22) {
         finalHour = 10;
       } else if (finalHour == 23) {
         finalHour = 11;
-      }
+      };
 
       // Conjoin the newly established variables to display the final date
       // ex. "August 8, 2016 @ 2:30 PM"
@@ -244,6 +222,7 @@ app.controller('eventCtrl', function($scope, $http, $window) {
       // Push the eventObject into the empty listEvents array
       self.listEvents.push(eventObject);
 
+      // Create a marker for each event on the map
       var marker = new google.maps.Marker({
         map: map,
         animation: google.maps.Animation.DROP,
@@ -252,8 +231,10 @@ app.controller('eventCtrl', function($scope, $http, $window) {
         icon: image
       });
 
+      // Declare a new variable for InfoWindows
       var infoWindow = new google.maps.InfoWindow();
 
+      // Generate the content of the InfoWindows with JSON data
       var content = '<div class="event-name">' +
                     '<h4>' + eventObject.title + '</h4>' +
                     '<p><b>Venue:</b> ' + eventObject.location + '</p>' +
@@ -262,13 +243,15 @@ app.controller('eventCtrl', function($scope, $http, $window) {
                     '<p><b>Description:</b> ' + eventObject.description + '</p>' +
                     '</div>';
 
-      google.maps.event.addListener(marker, 'click', (function(marker, content, infoWindow){
+      // When a marker is clicked, bring up the InfoWindow and content for that specific event
+      google.maps.event.addListener(marker, 'click', (function(marker, content, infoWindow) {
         return function() {
            infoWindow.setContent(content);
            infoWindow.open(map, marker);
         };
       })(marker, content, infoWindow));
-    }
+
+    };
 
     // =====================================================================================
     // WILL BE USED TO GET INFORMATION ABOUT A SINGLE EVENT
