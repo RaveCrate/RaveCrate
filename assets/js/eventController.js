@@ -79,8 +79,8 @@ app.controller('eventCtrl', function($scope, $http, $window) {
     var image = {
       url: 'assets/images/map-marker.png',
       size: new google.maps.Size(71, 71),
-      origin: new google.maps.Point(0, 0),
-      anchor: new google.maps.Point(17, 34),
+      origin: new google.maps.Point(0, 5),
+      anchor: new google.maps.Point(40, 42),
       scaledSize: new google.maps.Size(70, 70)
     };
 
@@ -177,13 +177,34 @@ app.controller('eventCtrl', function($scope, $http, $window) {
       };
 
       // Create new variables to correctly display the day using joinDate
-      var finalMonth = newDate[0]; //ex. August
-      var finalDay = newDate.joinDate("", 1, 2); // ex. 8
+      var finalMonth = newDate[0]; // ex. August
+      var finalDay = newDate.joinDate("", 1, 2); // ex. 08
       var finalCentury = newDate.joinDate("", 3, 4); // ex. 20
       var finalYear = newDate.joinDate("", 5, 6); // ex. 16
       var finalHour = newDate.joinDate("", 8, 9); // ex. 14
       var finalMinute = newDate.joinDate("", 11, 12); // ex. 30
       var finalAmPm = newDate[13]; // ex. PM
+
+      // Remove the zero in finalDay if the day is < 10
+      if (finalDay == 01) {
+        finalDay = 1;
+      } else if (finalDay == 02) {
+        finalDay = 2;
+      } else if (finalDay == 03) {
+        finalDay = 3;
+      } else if (finalDay == 04) {
+        finalDay = 4;
+      } else if (finalDay == 05) {
+        finalDay = 5;
+      } else if (finalDay == 06) {
+        finalDay = 6;
+      } else if (finalDay == 07) {
+        finalDay = 7;
+      } else if (finalDay == 08) {
+        finalDay = 8;
+      } else if (finalDay == 09) {
+        finalDay = 9;
+      };
 
       // Convert finalHour from military time to standard time
       if (finalHour == 00) {
@@ -232,7 +253,9 @@ app.controller('eventCtrl', function($scope, $http, $window) {
       });
 
       // Declare a new variable for InfoWindows
-      var infoWindow = new google.maps.InfoWindow();
+      var infoWindow = new google.maps.InfoWindow({
+        pixelOffset: new google.maps.Size(10, 20)
+      });
 
       // Generate the content of the InfoWindows with JSON data
       var content = '<div class="event-name">' +
@@ -240,14 +263,16 @@ app.controller('eventCtrl', function($scope, $http, $window) {
                     '<p><b>Venue:</b> ' + eventObject.location + '</p>' +
                     '<p><b>Address:</b> ' + eventObject.address + ', ' + eventObject.city + ' ' + eventObject.state + ' ' + eventObject.postcode + '</p>' +
                     '<p><b>Date:</b> ' + eventObject.eventDate + '</p>' +
-                    '<p><b>Description:</b> ' + eventObject.description + '</p>' +
+                    '<p><a href="eventDetail.html" style="color: #17B2EF !important;">Click here for more details</a></p>' +
                     '</div>';
 
-      // When a marker is clicked, bring up the InfoWindow and content for that specific event
+      // When a marker is clicked, zoom in and bring up the InfoWindow and content for that specific event
       google.maps.event.addListener(marker, 'click', (function(marker, content, infoWindow) {
         return function() {
-           infoWindow.setContent(content);
-           infoWindow.open(map, marker);
+          infoWindow.setContent(content);
+          infoWindow.open(map, marker);
+          map.setZoom(15);
+          map.setCenter(marker.getPosition());
         };
       })(marker, content, infoWindow));
 
