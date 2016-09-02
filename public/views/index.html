@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="author" content="">
+	<!--title-->
+  <title>RaveCrate</title>
+	<!--CSS-->
+  <link href="./css/bootstrap.min.css" rel="stylesheet">
+  <link href="./css/style.css" rel="stylesheet">
+  <!--Google Fonts-->
+	<link href='https://fonts.googleapis.com/css?family=Ubuntu:400,300,500,700' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+  <link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="./images/favicon.ico" type="image/x-icon">
+    <!--[if lt IE 9]>
+	    <script src="js/html5shiv.js"></script>
+	    <script src="js/respond.min.js"></script>
+    <![endif]-->
+  <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
+</head><!--/head-->
+<body>
+
+
+  <div id="home-section" class="image-bg">
+
+  	<div id="o-wrapper" class="o-wrapper">
+      <button id="c-button--slide-left" class="c-button"><img src="./images/logo.png" class="c-button-img">MENU</button>
+      <div class="rightlogin">
+        <a href="login.html">LOG IN</a>
+        <a href="signup.html">SIGN UP</a>
+      </div>
+  	</div><!-- /o-wrapper -->
+
+    <nav id="c-menu--slide-left" class="c-menu c-menu--slide-left">
+      <div class="close-login">
+        <button class="c-menu_close">&#10005;</button>
+        <a href="login.html" class="nav-login">LOG IN</a>
+      </div>
+    <div class="nav-signup-div">
+      <a href="signup.html" class="nav-signup">SIGN UP</a>
+    </div>
+    	<ul class="c-menu__items">
+    	  <li class="c-menu__item nav-border-top"><a href="index.html" class="c-menu__link">HOME</a></li>
+        <li class="c-menu__item"><a href="about.html" class="c-menu__link">ABOUT US</a></li>
+    	  <li class="c-menu__item"><a href="./views/events.html" class="c-menu__link">EVENTS</a></li>
+    	  <li class="c-menu__item"><a href="createevents.html" class="c-menu__link">CREATE AN EVENT</a></li>
+    	  <li class="c-menu__item"><a href="freelancer.html" class="c-menu__link">FREELANCERS</a></li>
+    	  <li class="c-menu__item"><a href="createfreelancer.html" class="c-menu__link">BE A FREELANCER</a></li>
+    	  <li class="c-menu__item nav-border-bottom"><a href="#" class="c-menu__link">SETTINGS</a></li>
+    	</ul>
+      <div class="nav-image">
+        <img src="./images/RC_Topbanner.png">
+      </div>
+    </nav><!-- /c-menu slide-left -->
+
+    <div id="c-mask" class="c-mask"></div><!-- /c-mask -->
+
+      <div id="note">
+        <div class="note-items">
+          <img class="top-banner-image" src="./images/RC_Topbanner.png">
+          <div class="note-text">
+            <a href="signup.html" id="text">BECOME A FREELANCER</a>
+            <a id="close">&#10005;</a>
+          </div>
+        </div>
+      </div><!--/note-->
+
+    <div id="carousel" class="carousel slide" data-ride="carousel" data-interval="5000" style="margin-top: -1px;">
+
+      <!-- Indicators -->
+      <ol class="carousel-indicators">
+        <li data-target="#carousel" data-slide-to="0" class="active"></li>
+        <li data-target="#carousel" data-slide-to="1"></li>
+        <li data-target="#carousel" data-slide-to="2"></li>
+        <li data-target="#carousel" data-slide-to="3"></li>
+      </ol>
+
+      <!-- Wrapper for slides -->
+      <div class="carousel-inner" role="listbox">
+        <div class="item active">
+          <img src="./images/RC_Photo_Main.jpg" alt="..." style="height: 87vh; width: 100%;">
+          <div class="carousel-caption" class="getstarted">
+            <h1 class="ravecrate-title">RaveCrate</h1>
+            <br><br><br><br><br><br>
+            <button type="button" class="btn btn-info signup"><a href="signup.html"><h1>SIGN UP</h1></a></button>
+            <h2>Your personal marketplace for gigs and events</h2>
+            <p>The party never ends</p>
+            <a class="learn-more" href="about.html">Learn More</a>
+            <br>
+          </div>
+        </div>
+        <div class="item">
+          <img src="./images/header1.jpg" alt="..." style="height: 87vh; width: 100%;">
+          <div class="carousel-caption">
+            <h1 class="ravecrate-title">RaveCrate</h1>
+            <br><br><br><br><br><br>
+            <button type="button" class="btn btn-info signup"><a href="events.html"><h1>EVENTS</h1></a></button>
+            <h2>Find Local Events</h2>
+            <a href="events.html"><p>Click here to see your local events</p></a>
+          </div>
+        </div>
+        <div class="item">
+          <img src="./images/header3.jpg" alt="..." style="height: 87vh; width: 100%;">
+          <div class="carousel-caption">
+            <h1 class="ravecrate-title">RaveCrate</h1>
+            <br><br><br><br><br><br>
+            <button type="button" class="btn btn-info signup"><a href="freelancer.html"><h1 style="font-size: 35px;">FREELANCE</h1></a></button>
+            <h2>Become a Freelancer</h2>
+            <a href="freelancer.html"><p>Click here to find freelancers in your area</p></a>
+          </div>
+        </div>
+        <div class="item">
+          <img src="./images/header4.jpg" alt="..." style="height: 87vh; width: 100%;">
+          <div class="carousel-caption">
+            <h1 class="ravecrate-title">RaveCrate</h1>
+            <br><br><br><br><br><br>
+            <button type="button" class="btn btn-info signup"><a href="signup.html"><h1>SIGN UP</h1></a></button>
+            <h2>Sign up Today</h2>
+            <a href="signup.html"><p>Click here to get started</p></a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Controls -->
+      <a class="left carousel-control" href="#carousel" role="button" data-slide="prev">
+        <i class="fa fa-chevron-left fa-2x" aria-hidden="true" style="margin-top: 350px;"></i>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="right carousel-control" href="#carousel" role="button" data-slide="next">
+        <i class="fa fa-chevron-right fa-2x" aria-hidden="true" style="margin-top: 350px;"></i>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+  </div>
+	<!--/#home-section-->
+
+  <div id="video-section">
+    <div class="video">
+      <video autoplay="true" loop muted>
+        <source src="./video/RaveCrate1.mp4" type="video/mp4">
+      </video>
+    </div>
+  </div>
+	<!--/#video-section-->
+
+  <!--/#features-->
+  <div id="whats-special" class="padding image-bg" style="position: relative;">
+    <h1>What Can You Do With RaveCrate?</h1>
+    <div class="row special-imgs">
+      <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+        <div class="imgWrap" data-toggle="modal" data-target=".host-modal">
+          <a href="#"><img src="./images/special/host.jpg"></a>
+          <div class="special-hover"></div>
+          <p class="special-title"><b>HOST</b></p>
+        </div>
+      </div>
+      <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+        <div class="imgWrap" data-toggle="modal" data-target=".freelancer-modal">
+          <a href="#"><img src="./images/special/freelancer.jpg"></a>
+          <div class="special-hover"></div>
+          <p class="special-title"><b>FREELANCER</b></p>
+        </div>
+      </div>
+      <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+        <div class="imgWrap" data-toggle="modal" data-target=".attendees-modal">
+          <a href="#"><img src="./images/special/attendees.jpg"></a>
+          <div class="special-hover"></div>
+          <p class="special-title"><b>ATTENDEES</b></p>
+        </div>
+      </div>
+    </div>
+    <div class="row special-imgs" style="padding-top: 70px;">
+      <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+        <div class="imgWrap" data-toggle="modal" data-target=".sponsor-modal">
+          <a href="#"><img src="./images/special/sponsor.jpg"></a>
+          <div class="special-hover"></div>
+          <p class="special-title"><b>SPONSOR</b></p>
+        </div>
+      </div>
+      <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+        <div class="imgWrap" data-toggle="modal" data-target=".proximity-modal">
+          <a href="#"><img src="./images/special/proximity.jpg"></a>
+          <div class="special-hover"></div>
+          <p class="special-title"><b>PROXIMITY</b></p>
+        </div>
+      </div>
+      <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+        <div class="imgWrap" data-toggle="modal" data-target=".feedback-modal">
+          <a href="#"><img src="./images/special/feedback.jpg"></a>
+          <div class="special-hover"></div>
+          <p class="special-title"><b>FEEDBACK</b></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Fullscreen Modals -->
+
+  <!-- Host Modal -->
+  <div class="modal fade host-modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&#10005;</span></button>
+          <h2 class="modal-title" id="myModalLabel"><b>Host</b></h2>
+        </div>
+        <div class="col-md-12">
+          <div class="panel panel-default">
+            <div class="row outer">
+              <div class=" first-column col-md-6">
+                <h4>With our mobile app and website, you can host events and get paid for it. In addition, you can hire freelancers and gain PR, or even persuade sponsors to lower the cost of an event.</h4>
+
+                <button class="close" data-dismiss="modal"><img src="./images/special/feedback.jpg" alt="" data-toggle="modal" data-target=".feedback-modal"/></button>
+
+                <button class="close" data-dismiss="modal"><img src="./images/special/proximity.jpg" alt="" data-toggle="modal" data-target=".proximity-modal"/></button>
+
+                <button class="close" data-dismiss="modal"><img src="./images/special/sponsor.jpg" alt="" data-toggle="modal" data-target=".sponsor-modal"/></button>
+
+                <button class="close" data-dismiss="modal"><img src="./images/special/attendees.jpg" alt="" data-toggle="modal" data-target=".attendees-modal"/></button>
+
+                <button class="close" data-dismiss="modal"><img src="./images/special/freelancer.jpg" alt="" data-toggle="modal" data-target=".freelancer-modal"/></button>
+
+                <button class="close" style="opacity: 1;"><img src="./images/special/host.jpg" alt=""/></button>
+
+              </div>
+              <div class="col-md-6"><img src="./images/special/host.jpg" style="width:100vw" class="img-responsive"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Freelancer Modal -->
+  <div class="modal fade freelancer-modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&#10005;</span></button>
+          <h2 class="modal-title" id="myModalLabel"><b>Freelancer</b></h2>
+        </div>
+        <div class="col-md-12">
+          <div class="panel panel-default">
+            <div class="row outer">
+              <div class=" first-column col-md-6">
+                <h4>The Ravecrate community is home to a number of freelancers who are willing to help you pull off your event successfully. You don’t have to look for ads in the paper or scroll through online listings; freelancers, their skills, and locations are made available directly through Ravecrate.</h4>
+
+                <button class="close" data-dismiss="modal"><img src="./images/special/feedback.jpg" alt="" data-toggle="modal" data-target=".feedback-modal"/></button>
+
+                <button class="close" data-dismiss="modal"><img src="./images/special/proximity.jpg" alt="" data-toggle="modal" data-target=".proximity-modal"/></button>
+
+                <button class="close" data-dismiss="modal"><img src="./images/special/sponsor.jpg" alt="" data-toggle="modal" data-target=".sponsor-modal"/></button>
+
+                <button class="close" data-dismiss="modal"><img src="./images/special/attendees.jpg" alt="" data-toggle="modal" data-target=".attendees-modal"/></button>
+
+                <button class="close" style="opacity: 1;"><img src="./images/special/freelancer.jpg" alt=""/></button>
+
+                <button class="close" data-dismiss="modal"><img src="./images/special/host.jpg" alt="" data-toggle="modal" data-target=".host-modal"/></button>
+
+              </div>
+              <div class="col-md-6"><img src="./images/special/freelancer.jpg" style="width:100vw" class="img-responsive"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Attendees Modal -->
+  <div class="modal fade attendees-modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&#10005;</span></button>
+          <h2 class="modal-title" id="myModalLabel"><b>Attendees</b></h2>
+        </div>
+        <div class="col-md-12">
+          <div class="panel panel-default">
+            <div class="row outer">
+              <div class=" first-column col-md-6">
+                <h4>While Ravecrate takes the hassle out of event planning, it also makes reaching out to your guests even easier. Don’t dial up all your friends individually and text each of them the time, date, and location when you can send out mass invites through our mobile app or website. This feature works the other way around as well: guests have access to event information at their fingertips, making it easier for them to find you.</h4>
+                <button class="close" data-dismiss="modal"><img src="./images/special/feedback.jpg" alt="" data-toggle="modal" data-target=".feedback-modal"/></button>
+
+                <button class="close" data-dismiss="modal"><img src="./images/special/proximity.jpg" alt="" data-toggle="modal" data-target=".proximity-modal"/></button>
+
+                <button class="close" data-dismiss="modal"><img src="./images/special/sponsor.jpg" alt="" data-toggle="modal" data-target=".sponsor-modal"/></button>
+
+                <button class="close" style="opacity: 1;"><img src="./images/special/attendees.jpg" alt=""/></button>
+
+                <button class="close" data-dismiss="modal"><img src="./images/special/freelancer.jpg" alt="" data-toggle="modal" data-target=".freelancer-modal"/></button>
+
+                <button class="close" data-dismiss="modal"><img src="./images/special/host.jpg" alt=""/></button>
+
+              </div>
+              <div class="col-md-6"><img src="./images/special/attendees.jpg" style="width:100vw" class="img-responsive"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Sponsor Modal -->
+  <div class="modal fade sponsor-modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&#10005;</span></button>
+          <h2 class="modal-title" id="myModalLabel"><b>Sponsor</b></h2>
+        </div>
+        <div class="col-md-12">
+          <div class="panel panel-default">
+            <div class="row outer">
+              <div class=" first-column col-md-6">
+                <h4>Ravecrate allows you to search for possible sponsors for your events and gain leads. At the same time, users can sponsor events and make it public through Ravecrate.</h4>
+                <button class="close" data-dismiss="modal"><img src="./images/special/feedback.jpg" alt="" data-toggle="modal" data-target=".feedback-modal"/></button>
+
+                <button class="close" data-dismiss="modal"><img src="./images/special/proximity.jpg" alt="" data-toggle="modal" data-target=".proximity-modal"/></button>
+
+                <button class="close" style="opacity: 1;"><img src="./images/special/sponsor.jpg" alt=""/></button>
+
+                <button class="close" data-dismiss="modal"><img src="./images/special/attendees.jpg" alt="" data-toggle="modal" data-target=".attendees-modal"/></button>
+
+                <button class="close" data-dismiss="modal"><img src="./images/special/freelancer.jpg" alt="" data-toggle="modal" data-target=".freelancer-modal"/></button>
+
+                <button class="close" data-dismiss="modal"><img src="./images/special/host.jpg" alt=""/></button>
+
+              </div>
+              <div class="col-md-6"><img src="./images/special/sponsor.jpg" style="width:100vw" class="img-responsive"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Proximity Modal -->
+  <div class="modal fade proximity-modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&#10005;</span></button>
+          <h2 class="modal-title" id="myModalLabel"><b>Proximity</b></h2>
+        </div>
+        <div class="col-md-12">
+          <div class="panel panel-default">
+            <div class="row outer">
+              <div class=" first-column col-md-6">
+                <h4>Instantly discover the location of nearby parties, events, and freelancers with our mobile app’s proximity feature. Ravecrate allows you to view interests you have in common with people close by, including their likes and past events they have attended. You can also customize your searches, whether you’re looking for dedicated developers or generous investors for you next enterprise.</h4>
+                <button class="close" data-dismiss="modal"><img src="./images/special/feedback.jpg" alt="" data-toggle="modal" data-target=".feedback-modal"/></button>
+
+                <button class="close" style="opacity: 1;"><img src="./images/special/proximity.jpg" alt=""/></button>
+
+                <button class="close" data-dismiss="modal"><img src="./images/special/sponsor.jpg" alt="" data-toggle="modal" data-target=".sponsor-modal"/></button>
+
+                <button class="close" data-dismiss="modal"><img src="./images/special/attendees.jpg" alt="" data-toggle="modal" data-target=".attendees-modal"/></button>
+
+                <button class="close" data-dismiss="modal"><img src="./images/special/freelancer.jpg" alt="" data-toggle="modal" data-target=".freelancer-modal"/></button>
+
+                <button class="close" data-dismiss="modal"><img src="./images/special/host.jpg" alt=""/></button>
+              </div>
+              <div class="col-md-6"><img src="./images/special/proximity.jpg" style="width:100vw" class="img-responsive"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Feedback Modal -->
+  <div class="modal fade feedback-modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&#10005;</span></button>
+          <h2 class="modal-title" id="myModalLabel"><b>Feedback</b></h2>
+        </div>
+        <div class="col-md-12">
+          <div class="panel panel-default">
+            <div class="row outer">
+              <div class="first-column col-md-6">
+                <h4>Don’t hesitate to tell us about your experience with Ravecrate. We review all feedback and implement changes in real time to make Ravecrate the best it can be. We understand the importance of catering to the diverse needs of event planners, freelancers, and guests to make events as successful as possible.</h4>
+                <button class="close" style="opacity: 1;"><img src="./images/special/feedback.jpg" alt=""/></button>
+
+                <button class="close" data-dismiss="modal"><img src="./images/special/proximity.jpg" alt="" data-toggle="modal" data-target=".proximity-modal"/></button>
+
+                <button class="close" data-dismiss="modal"><img src="./images/special/sponsor.jpg" alt="" data-toggle="modal" data-target=".sponsor-modal"/></button>
+
+                <button class="close" data-dismiss="modal"><img src="./images/special/attendees.jpg" alt="" data-toggle="modal" data-target=".attendees-modal"/></button>
+
+                <button class="close" data-dismiss="modal"><img src="./images/special/freelancer.jpg" alt="" data-toggle="modal" data-target=".freelancer-modal"/></button>
+
+                <button class="close" data-dismiss="modal"><img src="./images/special/host.jpg" alt=""/></button>
+              </div>
+              <div class="col-md-6"><img src="./images/special/feedback.jpg" style="width:100vw" class="img-responsive"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--#icons-->
+  <div id="freelancers">
+    <div class="freelancers-header text-center">
+      <h1>WANT TO FREELANCE WITH RAVECRATE?</h1>
+      <br>
+      <a href="#" class="become-a-freelancer">BECOME A FREELANCER</a>
+    </div>
+    <div class="icons">
+      <h3 style="text-align: center;">CLICK ON OR HOVER OVER THE ICONS TO LEARN MORE ABOUT FREELANCING OPPORTUNITIES WITH <b>RAVECRATE</b></h4>
+      <div class="content">
+        <div class="row icon-group">
+          <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 icon-content">
+            <div class="icon-title">
+              <p>Musician</p>
+            </div>
+            <div class="icon-image">
+            <a tabindex="0" data-toggle="popover" data-trigger="hover focus" data-placement="right" title="Musician" data-content="With Ravecrate, you’ll find all that your local scene has to offer, from live jazz bands for mixers and cocktail parties to DJs for get-togethers and raves."><img src="./images/icons/RC_Musician.png"></a>
+          </div>
+          </div>
+          <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 icon-content">
+            <div class="icon-title">
+              <p>Personal Trainer</p>
+            </div>
+            <a tabindex="0" data-toggle="popover" data-trigger="hover focus" data-placement="right" title="Personal Trainer" data-content="Gyms aren’t hard to find in today’s health-conscious world, although the guidance of a professional can. But with Ravecrate, you can find the personal trainer right for you."><img src="./images/icons/RC_Personal_Trainer.png"></a>
+            <!-- <p>Personal Trainer</p> -->
+          </div>
+          <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 icon-content">
+            <div class="icon-title">
+              <p>Chauffeur</p>
+            </div>
+            <a tabindex="0" data-toggle="popover" data-trigger="hover focus" data-placement="left" title="Chauffeur" data-content="Taxis or app-related driving services are either too expensive or too informal. Find affordable and professional chauffeurs ready to transport you and your guests."><img src="./images/icons/RC_Chauffeur.png"></a>
+            <!-- <p>Chauffeur</p> -->
+          </div>
+          <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 icon-content">
+            <div class="icon-title">
+              <p>Photographer</p>
+            </div>
+            <a tabindex="0" data-toggle="popover" data-trigger="hover focus" data-placement="left" title="Photographer" data-content="A picture is a worth a thousand words, but you shouldn’t spend that many looking for photographers when they you can find them all on your phone."><img src="./images/icons/RC_Photographer.png"></a>
+            <!-- <p>Photographer</p> -->
+          </div>
+        </div>
+        <div class="row icon-group">
+          <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 icon-content">
+            <div class="icon-title">
+              <p>Club</p>
+            </div>
+            <a tabindex="0" data-toggle="popover" data-trigger="hover focus" data-placement="right" title="Club" data-content="Instead of walking the streets in search of the best location or endlessly searching for open clubs on the web, simply open your Ravecrate app to find nearby venues."><img src="./images/icons/RC_Club.png"></a>
+            <!-- <p>Club</p> -->
+          </div>
+          <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 icon-content">
+            <div class="icon-title">
+              <p>DJ</p>
+            </div>
+            <a tabindex="0" data-toggle="popover" data-trigger="hover focus" data-placement="right" title="DJ" data-content="Relying on word-of- mouth to find a DJ for your event is time-consuming, but we can put you in touch with professionals at the touch of a button."><img src="./images/icons/RC_DJ.png"></a>
+            <!-- <p>DJ</p> -->
+          </div>
+          <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 icon-content">
+            <div class="icon-title">
+              <p>Event Planner</p>
+            </div>
+            <a tabindex="0" data-toggle="popover" data-trigger="hover focus" data-placement="left" title="Event Planner" data-content="If you’re too busy to plan out your event using Ravecrate, you can still use our app to hire a professional to plan for you."><img src="./images/icons/RC_Eventplanner.png"></a>
+            <!-- <p>Event Planner</p> -->
+          </div>
+          <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 icon-content">
+            <div class="icon-title">
+              <p>Valet</p>
+            </div>
+            <a tabindex="0" data-toggle="popover" data-trigger="hover focus" data-placement="left" title="Valet" data-content="Cars don’t park themselves, and sometimes having your guests park their own cars isn’t the most convenient option. Hire valets with our mobile app."><img src="./images/icons/RC_Valet.png"></a>
+            <!-- <p>Valet</p> -->
+          </div>
+        </div>
+        <div class="row icon-group">
+          <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 icon-content">
+            <div class="icon-title">
+              <p>Stylist</p>
+            </div>
+            <a tabindex="0" data-toggle="popover" data-trigger="hover focus" data-placement="right" title="Stylist" data-content="Some events not only require you to plan your best, but also look your best. Our app can help you do both by connecting you to stylists in your area."><img src="./images/icons/RC_Stylist.png"></a>
+            <!-- <p>Stylist</p> -->
+          </div>
+          <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 icon-content">
+            <div class="icon-title">
+              <p>Waitress</p>
+            </div>
+            <a tabindex="0" data-toggle="popover" data-trigger="hover focus" data-placement="right" title="Waitress" data-content="Even if your event is catered, sometimes servers are necessary. No need to enlist your friends at the last minute; you can reach waiters and waitresses with Ravecrate."><img src="./images/icons/RC_Waitress.png"></a>
+            <!-- <p>Waitress</p> -->
+          </div>
+          <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 icon-content">
+            <div class="icon-title">
+              <p>Dancer</p>
+            </div>
+            <a tabindex="0" data-toggle="popover" data-trigger="hover focus" data-placement="left" title="Dancer" data-content="Your guests might like to dance, but when the situation calls for professionals, our app offers you the best selection possible."><img src="./images/icons/RC_Dancer.png"></a>
+            <!-- <p>Dancer</p> -->
+          </div>
+          <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 icon-content">
+            <div class="icon-title">
+              <p>Keynote Speaker</p>
+            </div>
+            <a tabindex="0" data-toggle="popover" data-trigger="hover focus" data-placement="left" title="Keynote Speaker" data-content="While you might not be planning a university’s commencement ceremony or political convention, you can find a keynote speaker for your event with our app."><img src="./images/icons/RC_EventSpeaker.png"></a>
+            <!-- <p>Keynote Speaker</p> -->
+          </div>
+        </div>
+        <div class="row icon-group">
+          <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 icon-content">
+            <div class="icon-title">
+              <p>Catering</p>
+            </div>
+            <a tabindex="0" data-toggle="popover" data-trigger="hover focus" data-placement="right" title="Catering" data-content="Don’t settle for potlucks or scramble for deserts – use our app to locate caterers dedicated to providing your event with enough food for all your guests."><img src="./images/icons/RC_Catering.png"></a>
+            <!-- <p>Catering</p> -->
+          </div>
+          <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 icon-content">
+            <div class="icon-title">
+              <p>Host</p>
+            </div>
+            <a tabindex="0" data-toggle="popover" data-trigger="hover focus" data-placement="right" title="Host" data-content="Have a party planned and staffed but need a location? Contact an individual ready and willing to host your event."><img src="./images/icons/RC_Hostess.png"></a>
+            <!-- <p>Host</p> -->
+          </div>
+          <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 icon-content">
+            <div class="icon-title">
+              <p>Clown</p>
+            </div>
+            <a tabindex="0" data-toggle="popover" data-trigger="hover focus" data-placement="left" title="Clown" data-content="Need an entertainer from your child’s next birthday party? Don’t look for the circus – use the Ravecrate app!"><img src="./images/icons/RC_Clown.png"></a>
+            <!-- <p>Clown</p> -->
+          </div>
+          <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 icon-content">
+            <div class="icon-title">
+              <p>Apparel</p>
+            </div>
+            <a tabindex="0" data-toggle="popover" data-trigger="hover focus" data-placement="left" title="Apparel" data-content="Need costumes to complete your choreography? Looking to clothe guests for a masked ball? Look no further than your phone – and Ravecrate."><img src="./images/icons/RC_Apparel.png"></a>
+            <!-- <p>Apparel</p> -->
+          </div>
+        </div>
+        <div class="row icon-group">
+          <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 icon-content">
+            <div class="icon-title">
+              <p>Bartender</p>
+            </div>
+            <a tabindex="0" data-toggle="popover" data-trigger="hover focus" data-placement="right" title="Bartender" data-content="If your event takes place far from a bar, don’t worry about serving beverages and drinks as well as a bartender – just hire one with Ravecrate!"><img src="./images/icons/RC_Bartender.png"></a>
+            <!-- <p>Bartender</p> -->
+          </div>
+          <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 icon-content">
+            <div class="icon-title">
+              <p>Receptionist</p>
+            </div>
+            <a tabindex="0" data-toggle="popover" data-trigger="hover focus" data-placement="right" title="Receptionist" data-content="Sometimes your events aren’t complete without a smile and greeting at the door. We can connect you with receptionists happy to direct guests."><img src="./images/icons/RC_Receptionist.png"></a>
+            <!-- <p>Receptionist</p> -->
+          </div>
+          <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 icon-content">
+            <div class="icon-title">
+              <p>Videographer</p>
+            </div>
+            <a tabindex="0" data-toggle="popover" data-trigger="hover focus" data-placement="left" title="Videographer" data-content="Widely-available camera technology can make anyone into a videographer, but why settle for grainy quality when you can instantly find a professional?"><img src="./images/icons/RC_Videographer.png"></a>
+            <!-- <p>Videographer</p> -->
+          </div>
+          <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 icon-content">
+            <div class="icon-title">
+              <p>Security</p>
+            </div>
+            <a tabindex="0" data-toggle="popover" data-trigger="hover focus" data-placement="left" title="Security" data-content="Not every event can be managed alone. Find bouncers or guards for your larger and more unpredictable events without calling up every local agency."><img src="./images/icons/RC_Security_New.png"></a>
+            <!-- <p>Security</p> -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--#discover-->
+  <div id="discover" class="discover-bg">
+    <div class="discover-content">
+  	  <h1 class="text-center">Discover Your City</h1>
+  		<div class="box">
+        <div class="input-group city col-sm-4 col-md-4">
+          <input type="text" class="form-control input-lg" placeholder="FIND YOUR CITY" aria-describedby="basic-addon2">
+          <span class="input-group-btn" id="basic-addon2"><button class="btn btn-default btn-lg" type="button"><i class="fa fa-search"></i></button></span>
+        </div>
+  		</div>
+    </div>
+  </div>
+
+  <footer>
+		<div class="footer-links">
+      <div class="row">
+				<div class="col-md-1"></div>
+				<div class="col-md-1"></div>
+				<div class="col-md-1"><a href="signup.html">signup</a></div>
+				<div class="col-md-1"><a href="login.html">login</a></div>
+				<div class="col-md-1"><a href="freelancer.html">freelancer</a></div>
+				<div class="col-md-1"><a href="events.html">events</a></div>
+				<div class="col-md-1"><a href="contactUs.html">contact us</a></div>
+				<div class="col-md-1"><a href="comingsoon.html">terms</a></div>
+				<div class="col-md-1"><a href="comingsoon.html">poicies</a></div>
+				<div class="col-md-1"><a href="about.html">about us</a></div>
+        <div class="col-md-1"></div>
+				<div class="col-md-1"></div>
+			</div>
+		</div>
+		<div class="row bottom-footer">
+			<div class="copyright col-md-6">
+				<h4>&copy; Copyright 2016 RaveCrate.</h4>
+			</div>
+			<div class="social-media col-md-6">
+				<a href="http://www.facebook.com/ravecrate"><i class="fa fa-facebook fa-2x"></i></a>
+				<a href="http://www.instagram.com/ravecrate"><i class="fa fa-instagram fa-2x"></i></a>
+				<a href="http://www.twitter.com/ravecrate"><i class="fa fa-twitter fa-2x"></i></a>
+				<a href="http://www.linkedin.com/ravecrate"><i class="fa fa-linkedin fa-2x"></i></a>
+			</div>
+		</div>
+	</footer>
+  <!--/footer>
+
+	<!--/#scripts-->
+  <script type="text/javascript" src="./js/jquery.js"></script>
+  <script type="text/javascript" src="./js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="./js/jquery.magnific-popup.min.js"></script>
+  <script type="text/javascript" src="./js/jquery.nav.js"></script>
+  <script type="text/javascript" src="./js/canvas.js"></script>
+  <!-- <script type="text/javascript" src="./js/preloader.js"></script> -->
+  <script type="text/javascript" src="./js/owl.carousel.min.js"></script>
+  <script type="text/javascript" src="./js/wow.min.js"></script>
+  <script type="text/javascript" src="./js/main.js"></script>
+  <script>
+    close = document.getElementById("close");
+    close.addEventListener('click', function() {
+    note = document.getElementById("note");
+    note.style.display = 'none';
+    }, false);
+  </script>
+  <script src="./js/menu.js"></script>
+  <script>
+    var slideLeft = new Menu({
+    wrapper: '#o-wrapper',
+    type: 'slide-left',
+    menuOpenerClass: '.c-button',
+    maskId: '#c-mask'
+    });
+
+    var slideLeftBtn = document.querySelector('#c-button--slide-left');
+
+    slideLeftBtn.addEventListener('click', function(e) {
+    e.preventDefault;
+    slideLeft.open();
+    });
+
+    // Popover function intialize
+    $(function() {
+      $('[data-toggle="popover"]').popover()
+    });
+
+  </script>
+
+</body>
+</html>

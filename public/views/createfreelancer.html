@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="author" content="">
+	<!--title-->
+  <title>RaveCrate</title>
+	<!--CSS-->
+  <link href="/../css/bootstrap.min.css" rel="stylesheet">
+  <link href="/../css/style.css" rel="stylesheet">
+<!-- 	<!--Google Fonts-->
+	<link href='https://fonts.googleapis.com/css?family=Ubuntu:400,300,500,700' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+  <link rel="shortcut icon" href="/../images/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/../images/favicon.ico" type="image/x-icon">
+    <!--[if lt IE 9]>
+	    <script src="js/html5shiv.js"></script>
+	    <script src="js/respond.min.js"></script>
+    <![endif]-->
+  <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
+  <script type="text/javascript" src="//platform.linkedin.com/in.js">
+    api_key: 75t2sdhbvfi2nx
+    onLoad: onLinkedInLoad
+    authorize: true
+  </script>
+  <script>
+    function onLinkedInLoad() {
+      IN.Event.on(IN, "auth", onLinkedInAuth);
+    }
+
+    function onLinkedInAuth() {
+      IN.API.Profile("me").fields([
+                "first-name", "last-name", "headline", "positions:(company, title, summary, start-date, end-date, is-current)", "industry",
+                "location:(name, country:(code))", "picture-url", "public-profile-url",
+                "specialties"])
+        .result(displayProfiles);
+    }
+
+    function displayProfiles(profiles) {
+      member = profiles.values[0].positions.values[0];
+      document.getElementById('profiles').innerHTML =
+      "<p id=\"" + member.id + "\">Company: " + member.company.name + "<br>" + "Position: " + member.title + "<br>" + "Summary: " + member.summary + "<br>" + "Start Date: " + member.startDate.month + "/" + member.startDate.year +  "</p>";
+
+      document.getElementById('work-experience').value =
+      "Company: " + member.company.name + " | " + "Position: " + member.title + " | " + "Summary: " + member.summary + " | " + "Start Date: " + member.startDate.month + "/" + member.startDate.year;
+
+      document.getElementById("freelancer-first-name").value = profiles.values[0].firstName;
+      document.getElementById("freelancer-last-name").value = profiles.values[0].lastName;
+    }
+  </script>
+</head><!--/head-->
+<body>
+
+  <div id="home-section" class="image-bg">
+
+  	<div id="o-wrapper" class="o-wrapper">
+      <button id="c-button--slide-left" class="c-button"><img src="/../images/logo.png" class="c-button-img">MENU</button>
+      <div class="rightlogin">
+        <a href="login.html">LOG IN</a>
+        <a href="signup.html">SIGN UP</a>
+      </div>
+  	</div><!-- /o-wrapper -->
+
+    <nav id="c-menu--slide-left" class="c-menu c-menu--slide-left">
+      <div class="close-login">
+        <button class="c-menu_close">&#10005;</button>
+        <a href="login.html" class="nav-login">LOG IN</a>
+      </div>
+    <div class="nav-signup-div">
+      <a href="signup.html" class="nav-signup">SIGN UP</a>
+    </div>
+    <ul class="c-menu__items">
+      <li class="c-menu__item nav-border-top"><a href="index.html" class="c-menu__link">HOME</a></li>
+      <li class="c-menu__item"><a href="about.html" class="c-menu__link">ABOUT US</a></li>
+      <li class="c-menu__item"><a href="events.html" class="c-menu__link">EVENTS</a></li>
+      <li class="c-menu__item"><a href="createevents.html" class="c-menu__link">CREATE AN EVENT</a></li>
+      <li class="c-menu__item"><a href="freelancer.html" class="c-menu__link">FREELANCERS</a></li>
+      <li class="c-menu__item"><a href="createfreelancer.html" class="c-menu__link">BE A FREELANCER</a></li>
+      <li class="c-menu__item nav-border-bottom"><a href="#" class="c-menu__link">SETTINGS</a></li>
+    </ul>
+      <div class="nav-image">
+        <img src="/../images/RC_Topbanner.png">
+      </div>
+    </nav><!-- /c-menu slide-left -->
+
+    <div id="c-mask" class="c-mask"></div><!-- /c-mask -->
+
+    <div class="container-fluid create-event">
+
+      <h1>Become a Freelancer</h1>
+
+      <br>
+      <br>
+      <script type="IN/Login"></script>
+      <div id="profiles">
+
+      </div>
+      <form>
+        <div class="form-group row">
+          <label for="inputEmail3" class="col-sm-offset-2 col-sm-2 form-control-label">First Name</label>
+          <div class="col-sm-5">
+            <input type="text" class="form-control" id="freelancer-first-name" placeholder="First Name">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="inputPassword3" class="col-sm-offset-2 col-sm-2 form-control-label">Last Name</label>
+          <div class="col-sm-5">
+            <input type="text" class="form-control" id="freelancer-last-name" placeholder="Last Name">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="inputPassword3" class="col-sm-offset-2 col-sm-2 form-control-label">Type of Freelancer</label>
+          <div class="col-sm-5">
+            <select class="form-control" id="freelancer-type">
+              <option>Apparel</option>
+              <option>Bartender</option>
+              <option>Catering</option>
+              <option>Chauffeur</option>
+              <option>Clown</option>
+              <option>Club</option>
+              <option>Dancer</option>
+              <option>DJ</option>
+              <option>Event Planner</option>
+              <option>Host</option>
+              <option>Keynote Speaker</option>
+              <option>Musician</option>
+              <option>Personal Trainer</option>
+              <option>Photographer</option>
+              <option>Receptionist</option>
+              <option>Security</option>
+              <option>Stylist</option>
+              <option>Valet</option>
+              <option>Videographer</option>
+              <option>Waitress</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="inputEmail3" class="col-sm-offset-2 col-sm-2 form-control-label">Description</label>
+          <div class="col-sm-5">
+            <textarea class="form-control" id="freelancer-description" rows="3" placeholder="Please provide a brief description of your skills/background. Also if you have a personal website please provide a link."></textarea>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="inputEmail3" class="col-sm-offset-2 col-sm-2 form-control-label">Work Experience</label>
+          <div class="col-sm-5">
+            <textarea class="form-control" id="work-experience" rows="3" placeholder="Please provide some brief information about your previous jobs/positions."></textarea>
+          </div>
+        </div>
+        <br>
+        <br>
+        <div class="form-group row">
+          <label for="inputEmail3" class="col-sm-offset-2 col-sm-2 form-control-label">Hourly Rate</label>
+          <div class="col-sm-5">
+            <div class="input-group">
+              <span class="input-group-addon" id="basic-addon1">$</span>
+              <input type="text" class="form-control" id="freelancer-hourly-rate" placeholder="Hourly Rate" aria-describedby="basic-addon1">
+            </div>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="inputEmail3" class="col-sm-offset-2 col-sm-2 form-control-label">Add Profile Picture</label>
+          <div class="col-sm-5">
+            <input type="file" class="form-control-file" id="exampleInputFile">
+          </div>
+        </div>
+        <button type="submit" id="submit" class="btn btn-primary">Submit</button>
+      </form>
+
+      <br>
+      <br>
+
+    </div>
+    <footer>
+  		<div class="footer-links">
+        <div class="row">
+  				<div class="col-md-1"><a href="signup.html">signup</a></div>
+  				<div class="col-md-1"><a href="login.html">login</a></div>
+  				<div class="col-md-1"><a href="eventplanner.html">eventplanner</a></div>
+  				<div class="col-md-1"><a href="freelancer.html">freelancer</a></div>
+  				<div class="col-md-1"><a href="comingsoon.html">icons</a></div>
+  				<div class="col-md-1"><a href="comingsoon.html">peoples</a></div>
+  				<div class="col-md-1"><a href="events.html">events</a></div>
+  				<div class="col-md-1"><a href="comingsoon.html">contact us</a></div>
+  				<div class="col-md-1"><a href="comingsoon.html">terms</a></div>
+  				<div class="col-md-1"><a href="comingsoon.html">find a city</a></div>
+  				<div class="col-md-1"><a href="about.html">about us</a></div>
+  				<div class="col-md-1"><a href="comingsoon.html">careers</a></div>
+  			</div>
+  		</div>
+  		<div class="row bottom-footer">
+  			<div class="copyright col-md-6">
+  				<h4>&copy; Copyright 2016 RaveCrate.</h4>
+  			</div>
+  			<div class="social-media col-md-6">
+  				<a href="http://www.facebook.com/ravecrate"><i class="fa fa-facebook fa-2x"></i></a>
+  				<a href="http://www.instagram.com/ravecrate"><i class="fa fa-instagram fa-2x"></i></a>
+  				<a href="http://www.twitter.com/ravecrate"><i class="fa fa-twitter fa-2x"></i></a>
+  				<a href="http://www.linkedin.com/ravecrate"><i class="fa fa-linkedin fa-2x"></i></a>
+  			</div>
+  		</div>
+  	</footer>
+
+		<!--/#scripts-->
+	  <script type="text/javascript" src="/../js/jquery.js"></script>
+	  <script type="text/javascript" src="/../js/bootstrap.min.js"></script>
+	  <script type="text/javascript" src="/../js/jquery.magnific-popup.min.js"></script>
+	  <script type="text/javascript" src="/../js/jquery.nav.js"></script>
+	  <script type="text/javascript" src="/../js/canvas.js"></script>
+	  <!-- <script type="text/javascript" src="/../js/preloader.js"></script> -->
+	  <script type="text/javascript" src="/../js/owl.carousel.min.js"></script>
+	  <script type="text/javascript" src="/../js/wow.min.js"></script>
+	  <script type="text/javascript" src="/../js/main.js"></script>
+	  <script>
+	    // close = document.getElementById("close");
+	    // close.addEventListener('click', function() {
+	    // note = document.getElementById("note");
+	    // note.style.display = 'none';
+	    // }, false);
+	  </script>
+	  <script src="/../js/menu.js"></script>
+	  <script>
+	    var slideLeft = new Menu({
+	    wrapper: '#o-wrapper',
+	    type: 'slide-left',
+	    menuOpenerClass: '.c-button',
+	    maskId: '#c-mask'
+	    });
+
+	    var slideLeftBtn = document.querySelector('#c-button--slide-left');
+
+	    slideLeftBtn.addEventListener('click', function(e) {
+	    e.preventDefault;
+	    slideLeft.open();
+	    });
+
+	  </script>
+    <script type="text/javascript">
+    $('#submit').on('click', function(e) {
+
+      e.preventDefault();
+
+      var freelancerFirstName = $('#freelancer-first-name').val();
+      var freelancerLastName = $('#freelancer-last-name').val();
+      var freelancerType = $('#freelancer-type').val();
+      var freelancerDescription = $('#freelancer-description').val();
+      var freelancerHourlyRate = $('#freelancer-hourly-rate').val();
+
+      $.ajax({
+        url: "http://52.41.16.214:8080/api/v2/signupFreelancer",
+        method: "POST",
+        crossDomain: true,
+        contentType: "application/x-www-form-urlencoded; charset=utf-8",
+        dataType: 'json',
+        data: {first_name: freelancerFirstName, last_name: freelancerLastName, freelancer_type: freelancerType, description: freelancerDescription, hourly_rate: freelancerHourlyRate},
+        beforeSend: function (xhr) {
+          xhr.setRequestHeader ("Authorization", "Basic ZGV2ZWxvcGVyLXNpZDpzcGFycm93OA==");
+        },
+        success: function(data) {
+          console.log(JSON.stringify(data));
+          console.log("Freelancer successfully authenitcated!");
+          window.alert("Freelancer successfully created! Thank you!")
+        },
+      });
+    });
+    </script>
+	</body>
+	</html>
