@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="author" content="">
+	<!--title-->
+  <title>RaveCrate</title>
+	<!--CSS-->
+  <link href="/../css/bootstrap.min.css" rel="stylesheet">
+  <link href="/../css/style.css" rel="stylesheet">
+<!-- 	<!--Google Fonts-->
+	<link href='https://fonts.googleapis.com/css?family=Ubuntu:400,300,500,700' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+  <link rel="shortcut icon" href="/../images/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/../images/favicon.ico" type="image/x-icon">
+    <!--[if lt IE 9]>
+	    <script src="js/html5shiv.js"></script>
+	    <script src="js/respond.min.js"></script>
+    <![endif]-->
+  <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
+	<style>
+		html, body {
+			height: 100%;
+			margin: 0;
+			padding: 0;
+		}
+		#map {
+			height: 50%;
+		}
+	</style>
+</head><!--/head-->
+<body>
+
+  <div id="home-section" class="image-bg">
+
+  	<div id="o-wrapper" class="o-wrapper">
+      <button id="c-button--slide-left" class="c-button"><img src="/../images/logo.png" class="c-button-img">MENU</button>
+      <div class="rightlogin">
+        <a href="login.html">LOG IN</a>
+        <a href="signup.html">SIGN UP</a>
+      </div>
+  	</div><!-- /o-wrapper -->
+
+    <nav id="c-menu--slide-left" class="c-menu c-menu--slide-left">
+      <div class="close-login">
+        <button class="c-menu_close">&#10005;</button>
+        <a href="login.html" class="nav-login">LOG IN</a>
+      </div>
+    <div class="nav-signup-div">
+      <a href="signup.html" class="nav-signup">SIGN UP</a>
+    </div>
+    <ul class="c-menu__items">
+      <li class="c-menu__item nav-border-top"><a href="index.html" class="c-menu__link">HOME</a></li>
+      <li class="c-menu__item"><a href="about.html" class="c-menu__link">ABOUT US</a></li>
+      <li class="c-menu__item"><a href="events.html" class="c-menu__link">EVENTS</a></li>
+      <li class="c-menu__item"><a href="createevents.html" class="c-menu__link">CREATE AN EVENT</a></li>
+      <li class="c-menu__item"><a href="freelancer.html" class="c-menu__link">FREELANCERS</a></li>
+      <li class="c-menu__item"><a href="createfreelancer.html" class="c-menu__link">BE A FREELANCER</a></li>
+      <li class="c-menu__item nav-border-bottom"><a href="#" class="c-menu__link">SETTINGS</a></li>
+    </ul>
+      <div class="nav-image">
+        <img src="/../images/RC_Topbanner.png">
+      </div>
+    </nav><!-- /c-menu slide-left -->
+
+    <div id="c-mask" class="c-mask"></div><!-- /c-mask -->
+
+    <div class="">
+      <img src="/../images/special/attendees.jpg" alt="" style="width: 50%; height: 600px; float: left;"/>
+      <img src="/../images/events/network_events.jpeg" alt="" style="width: 50%; height: 600px; float: right;"/>
+      <div class="event-title">
+				<h1>Play, Promote & Pay the easier way!</h1>
+				<a href="#"><h3 class="title">Learn More</h3></a>
+			</div>
+    </div>
+
+    <div class="container-fluid">
+
+      <form class="" action="index.html" method="post">
+        <div class="search-freelancers">
+        <div class="col-md-3">
+          <input type="text" class="form-control" placeholder="Search for events" aria-describedby="basic-addon1">
+        </div>
+          <div class="col-md-3">
+            <select class="form-control" id="exampleSelect1">
+              <option>Chicago</option>
+              <option>New York</option>
+              <option>Las Vegas</option>
+              <option>San Diego</option>
+              <option selected>Los Angeles</option>
+              <option>San Francisco</option>
+              <option>Boston</option>
+              <option>Miami</option>
+            </select>
+          </div>
+          <div class="col-md-3">
+            <select class="form-control" id="exampleSelect1">
+              <option selected>Search Dates</option>
+              <option>JAN</option>
+              <option>FEB</option>
+              <option>MAR</option>
+              <option>APR</option>
+              <option>MAY</option>
+              <option>JUN</option>
+              <option>JUL</option>
+              <option>AUG</option>
+              <option>SEP</option>
+              <option>OCT</option>
+              <option>NOV</option>
+              <option>DEC</option>
+            </select>
+          </div>
+          <div class="col-md-3">
+            <button type="button" class="btn btn-primary">SEARCH</button>
+          </div>
+        </div>
+      </form>
+
+      <div><p style="color: black; margin: 10px 0px 10px 30px; float: left;">Popular Freelancers in <a href="#" style="color: #17B2EF; text-decoration: underline;">Los Angeles, CA</a></p><br><br><br><br></div>
+
+      <!-- Stylist -->
+      <div class="popular-freelancers" style="color: grey;">
+        <div class="col-md-1">
+          <p>Stylist</p>
+        </div>
+        <div class="col-md-1">
+          <a href="freelancerProfile.html"><img src="http://res.freestockphotos.biz/pictures/14/14114-a-beautiful-young-business-woman-posing-on-a-white-background-pv.jpg" alt="" style="border-radius: 50%; border: 3px solid #17B2EF; height: 100px; width: 100px;"/></a>
+        </div>
+        <div class="col-md-1">
+          <a href="freelancerProfile.html"><img src="http://res.freestockphotos.biz/pictures/14/14114-a-beautiful-young-business-woman-posing-on-a-white-background-pv.jpg" alt="" style="border-radius: 50%; border: 3px solid #17B2EF; height: 100px; width: 100px;"/></a>
+        </div>
+        <div class="col-md-1">
+          <a href="freelancerProfile.html"><img src="http://res.freestockphotos.biz/pictures/14/14114-a-beautiful-young-business-woman-posing-on-a-white-background-pv.jpg" alt="" style="border-radius: 50%; border: 3px solid #17B2EF; height: 100px; width: 100px;"/></a>
+        </div>
+        <div class="col-md-1">
+          <a href="freelancerProfile.html"><img src="http://res.freestockphotos.biz/pictures/14/14114-a-beautiful-young-business-woman-posing-on-a-white-background-pv.jpg" alt="" style="border-radius: 50%; border: 3px solid #17B2EF; height: 100px; width: 100px;"/></a>
+        </div>
+        <div class="col-md-1">
+          <a href="freelancerProfile.html"><img src="http://res.freestockphotos.biz/pictures/14/14114-a-beautiful-young-business-woman-posing-on-a-white-background-pv.jpg" alt="" style="border-radius: 50%; border: 3px solid #17B2EF; height: 100px; width: 100px;"/></a>
+        </div>
+        <div class="col-md-1">
+          <a href="freelancerProfile.html"><img src="http://res.freestockphotos.biz/pictures/14/14114-a-beautiful-young-business-woman-posing-on-a-white-background-pv.jpg" alt="" style="border-radius: 50%; border: 3px solid #17B2EF; height: 100px; width: 100px;"/></a>
+        </div>
+        <div class="col-md-1">
+          <a href="freelancerProfile.html"><img src="http://res.freestockphotos.biz/pictures/14/14114-a-beautiful-young-business-woman-posing-on-a-white-background-pv.jpg" alt="" style="border-radius: 50%; border: 3px solid #17B2EF; height: 100px; width: 100px;"/></a>
+        </div>
+        <div class="col-md-1">
+          <a href="freelancerProfile.html"><img src="http://res.freestockphotos.biz/pictures/14/14114-a-beautiful-young-business-woman-posing-on-a-white-background-pv.jpg" alt="" style="border-radius: 50%; border: 3px solid #17B2EF; height: 100px; width: 100px;"/></a>
+        </div>
+        <div class="col-md-1">
+          <a href="freelancerProfile.html"><img src="http://res.freestockphotos.biz/pictures/14/14114-a-beautiful-young-business-woman-posing-on-a-white-background-pv.jpg" alt="" style="border-radius: 50%; border: 3px solid #17B2EF; height: 100px; width: 100px;"/></a>
+        </div>
+        <div class="col-md-1">
+          <a href="freelancerProfile.html"><img src="http://res.freestockphotos.biz/pictures/14/14114-a-beautiful-young-business-woman-posing-on-a-white-background-pv.jpg" alt="" style="border-radius: 50%; border: 3px solid #17B2EF; height: 100px; width: 100px;"/></a>
+        </div>
+        <div class="col-md-1">
+          <p>See All ></p><br><br><br><br>
+        </div>
+        <hr style="display: block; margin-top: 0.5em; margin-bottom: 0.5em; margin-left: auto; margin-right: auto; border-style: inset; border-width: 1px;">
+      </div>
+
+      <!-- Bartenders -->
+      <div class="popular-freelancers" style="color: grey;">
+        <div class="col-md-1">
+          <p>Bartenders</p>
+        </div>
+        <div class="col-md-1">
+          <a href="freelancerProfile.html"><img src="http://res.freestockphotos.biz/pictures/14/14114-a-beautiful-young-business-woman-posing-on-a-white-background-pv.jpg" alt="" style="border-radius: 50%; border: 3px solid #17B2EF; height: 100px; width: 100px;"/></a>
+        </div>
+        <div class="col-md-1">
+          <a href="freelancerProfile.html"><img src="http://res.freestockphotos.biz/pictures/14/14114-a-beautiful-young-business-woman-posing-on-a-white-background-pv.jpg" alt="" style="border-radius: 50%; border: 3px solid #17B2EF; height: 100px; width: 100px;"/></a>
+        </div>
+        <div class="col-md-1">
+          <a href="freelancerProfile.html"><img src="http://res.freestockphotos.biz/pictures/14/14114-a-beautiful-young-business-woman-posing-on-a-white-background-pv.jpg" alt="" style="border-radius: 50%; border: 3px solid #17B2EF; height: 100px; width: 100px;"/></a>
+        </div>
+        <div class="col-md-1">
+          <a href="freelancerProfile.html"><img src="http://res.freestockphotos.biz/pictures/14/14114-a-beautiful-young-business-woman-posing-on-a-white-background-pv.jpg" alt="" style="border-radius: 50%; border: 3px solid #17B2EF; height: 100px; width: 100px;"/></a>
+        </div>
+        <div class="col-md-1">
+          <a href="freelancerProfile.html"><img src="http://res.freestockphotos.biz/pictures/14/14114-a-beautiful-young-business-woman-posing-on-a-white-background-pv.jpg" alt="" style="border-radius: 50%; border: 3px solid #17B2EF; height: 100px; width: 100px;"/></a>
+        </div>
+        <div class="col-md-1">
+          <a href="freelancerProfile.html"><img src="http://res.freestockphotos.biz/pictures/14/14114-a-beautiful-young-business-woman-posing-on-a-white-background-pv.jpg" alt="" style="border-radius: 50%; border: 3px solid #17B2EF; height: 100px; width: 100px;"/></a>
+        </div>
+        <div class="col-md-1">
+          <a href="freelancerProfile.html"><img src="http://res.freestockphotos.biz/pictures/14/14114-a-beautiful-young-business-woman-posing-on-a-white-background-pv.jpg" alt="" style="border-radius: 50%; border: 3px solid #17B2EF; height: 100px; width: 100px;"/></a>
+        </div>
+        <div class="col-md-1">
+          <a href="freelancerProfile.html"><img src="http://res.freestockphotos.biz/pictures/14/14114-a-beautiful-young-business-woman-posing-on-a-white-background-pv.jpg" alt="" style="border-radius: 50%; border: 3px solid #17B2EF; height: 100px; width: 100px;"/></a>
+        </div>
+        <div class="col-md-1">
+          <a href="freelancerProfile.html"><img src="http://res.freestockphotos.biz/pictures/14/14114-a-beautiful-young-business-woman-posing-on-a-white-background-pv.jpg" alt="" style="border-radius: 50%; border: 3px solid #17B2EF; height: 100px; width: 100px;"/></a>
+        </div>
+        <div class="col-md-1">
+          <a href="freelancerProfile.html"><img src="http://res.freestockphotos.biz/pictures/14/14114-a-beautiful-young-business-woman-posing-on-a-white-background-pv.jpg" alt="" style="border-radius: 50%; border: 3px solid #17B2EF; height: 100px; width: 100px;"/></a>
+        </div>
+        <div class="col-md-1">
+          <p>See All ></p><br><br><br><br>
+        </div>
+        <hr style="display: block; margin-top: 0.5em; margin-bottom: 0.5em; margin-left: auto; margin-right: auto; border-style: inset; border-width: 1px;">
+      </div>
+
+      <!-- Waitress -->
+      <div class="popular-freelancers" style="color: grey;">
+        <div class="col-md-1">
+          <p>Waitress</p>
+        </div>
+        <div class="col-md-1">
+          <a href="freelancerProfile.html"><img src="http://res.freestockphotos.biz/pictures/14/14114-a-beautiful-young-business-woman-posing-on-a-white-background-pv.jpg" alt="" style="border-radius: 50%; border: 3px solid #17B2EF; height: 100px; width: 100px;"/></a>
+        </div>
+        <div class="col-md-1">
+          <a href="freelancerProfile.html"><img src="http://res.freestockphotos.biz/pictures/14/14114-a-beautiful-young-business-woman-posing-on-a-white-background-pv.jpg" alt="" style="border-radius: 50%; border: 3px solid #17B2EF; height: 100px; width: 100px;"/></a>
+        </div>
+        <div class="col-md-1">
+          <a href="freelancerProfile.html"><img src="http://res.freestockphotos.biz/pictures/14/14114-a-beautiful-young-business-woman-posing-on-a-white-background-pv.jpg" alt="" style="border-radius: 50%; border: 3px solid #17B2EF; height: 100px; width: 100px;"/></a>
+        </div>
+        <div class="col-md-1">
+          <a href="freelancerProfile.html"><img src="http://res.freestockphotos.biz/pictures/14/14114-a-beautiful-young-business-woman-posing-on-a-white-background-pv.jpg" alt="" style="border-radius: 50%; border: 3px solid #17B2EF; height: 100px; width: 100px;"/></a>
+        </div>
+        <div class="col-md-1">
+          <a href="freelancerProfile.html"><img src="http://res.freestockphotos.biz/pictures/14/14114-a-beautiful-young-business-woman-posing-on-a-white-background-pv.jpg" alt="" style="border-radius: 50%; border: 3px solid #17B2EF; height: 100px; width: 100px;"/></a>
+        </div>
+        <div class="col-md-1">
+          <a href="freelancerProfile.html"><img src="http://res.freestockphotos.biz/pictures/14/14114-a-beautiful-young-business-woman-posing-on-a-white-background-pv.jpg" alt="" style="border-radius: 50%; border: 3px solid #17B2EF; height: 100px; width: 100px;"/></a>
+        </div>
+        <div class="col-md-1">
+          <a href="freelancerProfile.html"><img src="http://res.freestockphotos.biz/pictures/14/14114-a-beautiful-young-business-woman-posing-on-a-white-background-pv.jpg" alt="" style="border-radius: 50%; border: 3px solid #17B2EF; height: 100px; width: 100px;"/></a>
+        </div>
+        <div class="col-md-1">
+          <a href="freelancerProfile.html"><img src="http://res.freestockphotos.biz/pictures/14/14114-a-beautiful-young-business-woman-posing-on-a-white-background-pv.jpg" alt="" style="border-radius: 50%; border: 3px solid #17B2EF; height: 100px; width: 100px;"/></a>
+        </div>
+        <div class="col-md-1">
+          <a href="freelancerProfile.html"><img src="http://res.freestockphotos.biz/pictures/14/14114-a-beautiful-young-business-woman-posing-on-a-white-background-pv.jpg" alt="" style="border-radius: 50%; border: 3px solid #17B2EF; height: 100px; width: 100px;"/></a>
+        </div>
+        <div class="col-md-1">
+          <a href="freelancerProfile.html"><img src="http://res.freestockphotos.biz/pictures/14/14114-a-beautiful-young-business-woman-posing-on-a-white-background-pv.jpg" alt="" style="border-radius: 50%; border: 3px solid #17B2EF; height: 100px; width: 100px;"/></a>
+        </div>
+        <div class="col-md-1">
+          <p>See All ></p><br><br><br><br>
+        </div>
+        <hr style="display: block; margin-top: 0.5em; margin-bottom: 0.5em; margin-left: auto; margin-right: auto; border-style: inset; border-width: 1px;">
+      </div>
+
+      <!-- DJs -->
+      <div class="popular-freelancers" style="color: grey;">
+        <div class="col-md-1">
+          <p>DJs</p>
+        </div>
+        <div class="col-md-1">
+          <a href="freelancerProfile.html"><img src="http://res.freestockphotos.biz/pictures/14/14114-a-beautiful-young-business-woman-posing-on-a-white-background-pv.jpg" alt="" style="border-radius: 50%; border: 3px solid #17B2EF; height: 100px; width: 100px;"/></a>
+        </div>
+        <div class="col-md-1">
+          <a href="freelancerProfile.html"><img src="http://res.freestockphotos.biz/pictures/14/14114-a-beautiful-young-business-woman-posing-on-a-white-background-pv.jpg" alt="" style="border-radius: 50%; border: 3px solid #17B2EF; height: 100px; width: 100px;"/></a>
+        </div>
+        <div class="col-md-1">
+          <a href="freelancerProfile.html"><img src="http://res.freestockphotos.biz/pictures/14/14114-a-beautiful-young-business-woman-posing-on-a-white-background-pv.jpg" alt="" style="border-radius: 50%; border: 3px solid #17B2EF; height: 100px; width: 100px;"/></a>
+        </div>
+        <div class="col-md-1">
+          <a href="freelancerProfile.html"><img src="http://res.freestockphotos.biz/pictures/14/14114-a-beautiful-young-business-woman-posing-on-a-white-background-pv.jpg" alt="" style="border-radius: 50%; border: 3px solid #17B2EF; height: 100px; width: 100px;"/></a>
+        </div>
+        <div class="col-md-1">
+          <a href="freelancerProfile.html"><img src="http://res.freestockphotos.biz/pictures/14/14114-a-beautiful-young-business-woman-posing-on-a-white-background-pv.jpg" alt="" style="border-radius: 50%; border: 3px solid #17B2EF; height: 100px; width: 100px;"/></a>
+        </div>
+        <div class="col-md-1">
+          <a href="freelancerProfile.html"><img src="http://res.freestockphotos.biz/pictures/14/14114-a-beautiful-young-business-woman-posing-on-a-white-background-pv.jpg" alt="" style="border-radius: 50%; border: 3px solid #17B2EF; height: 100px; width: 100px;"/></a>
+        </div>
+        <div class="col-md-1">
+          <a href="freelancerProfile.html"><img src="http://res.freestockphotos.biz/pictures/14/14114-a-beautiful-young-business-woman-posing-on-a-white-background-pv.jpg" alt="" style="border-radius: 50%; border: 3px solid #17B2EF; height: 100px; width: 100px;"/></a>
+        </div>
+        <div class="col-md-1">
+          <a href="freelancerProfile.html"><img src="http://res.freestockphotos.biz/pictures/14/14114-a-beautiful-young-business-woman-posing-on-a-white-background-pv.jpg" alt="" style="border-radius: 50%; border: 3px solid #17B2EF; height: 100px; width: 100px;"/></a>
+        </div>
+        <div class="col-md-1">
+          <a href="freelancerProfile.html"><img src="http://res.freestockphotos.biz/pictures/14/14114-a-beautiful-young-business-woman-posing-on-a-white-background-pv.jpg" alt="" style="border-radius: 50%; border: 3px solid #17B2EF; height: 100px; width: 100px;"/></a>
+        </div>
+        <div class="col-md-1">
+          <a href="freelancerProfile.html"><img src="http://res.freestockphotos.biz/pictures/14/14114-a-beautiful-young-business-woman-posing-on-a-white-background-pv.jpg" alt="" style="border-radius: 50%; border: 3px solid #17B2EF; height: 100px; width: 100px;"/></a>
+        </div>
+        <div class="col-md-1">
+          <p>See All ></p><br><br><br><br>
+        </div>
+        <!-- <hr style="display: block; margin-top: 0.5em; margin-bottom: 0.5em; margin-left: auto; margin-right: auto; border-style: inset; border-width: 1px;"> -->
+      </div>
+
+
+
+    </div>
+
+    <footer>
+  		<div class="footer-links">
+        <div class="row">
+  				<div class="col-md-1"><a href="signup.html">signup</a></div>
+  				<div class="col-md-1"><a href="login.html">login</a></div>
+  				<div class="col-md-1"><a href="eventplanner.html">eventplanner</a></div>
+  				<div class="col-md-1"><a href="freelancer.html">freelancer</a></div>
+  				<div class="col-md-1"><a href="comingsoon.html">icons</a></div>
+  				<div class="col-md-1"><a href="comingsoon.html">peoples</a></div>
+  				<div class="col-md-1"><a href="events.html">events</a></div>
+  				<div class="col-md-1"><a href="comingsoon.html">contact us</a></div>
+  				<div class="col-md-1"><a href="comingsoon.html">terms</a></div>
+  				<div class="col-md-1"><a href="comingsoon.html">find a city</a></div>
+  				<div class="col-md-1"><a href="about.html">about us</a></div>
+  				<div class="col-md-1"><a href="comingsoon.html">careers</a></div>
+  			</div>
+  		</div>
+  		<div class="row bottom-footer">
+  			<div class="copyright col-md-6">
+  				<p>&copy; Copyright 2016 RaveCrate.</p>
+  			</div>
+  			<div class="social-media col-md-6">
+  				<a href="http://www.facebook.com/ravecrate"><i class="fa fa-facebook fa-2x"></i></a>
+  				<a href="http://www.instagram.com/ravecrate"><i class="fa fa-instagram fa-2x"></i></a>
+  				<a href="http://www.twitter.com/ravecrate"><i class="fa fa-twitter fa-2x"></i></a>
+  				<a href="http://www.linkedin.com/ravecrate"><i class="fa fa-linkedin fa-2x"></i></a>
+  			</div>
+  		</div>
+  	</footer>
+	  <!--/footer>
+
+		<!--/#scripts-->
+	  <script type="text/javascript" src="/../js/jquery.js"></script>
+	  <script type="text/javascript" src="/../js/bootstrap.min.js"></script>
+	  <script type="text/javascript" src="/../js/jquery.magnific-popup.min.js"></script>
+	  <script type="text/javascript" src="/../js/jquery.nav.js"></script>
+	  <script type="text/javascript" src="/../js/canvas.js"></script>
+	  <!-- <script type="text/javascript" src="/../js/preloader.js"></script> -->
+	  <script type="text/javascript" src="/../js/owl.carousel.min.js"></script>
+	  <script type="text/javascript" src="/../js/wow.min.js"></script>
+	  <script type="text/javascript" src="/../js/main.js"></script>
+
+	  <script>
+	    // close = document.getElementById("close");
+	    // close.addEventListener('click', function() {
+	    // note = document.getElementById("note");
+	    // note.style.display = 'none';
+	    // }, false);
+	  </script>
+	  <script src="/../js/menu.js"></script>
+	  <script>
+	    var slideLeft = new Menu({
+	    wrapper: '#o-wrapper',
+	    type: 'slide-left',
+	    menuOpenerClass: '.c-button',
+	    maskId: '#c-mask'
+	    });
+
+	    var slideLeftBtn = document.querySelector('#c-button--slide-left');
+
+	    slideLeftBtn.addEventListener('click', function(e) {
+	    e.preventDefault;
+	    slideLeft.open();
+	    });
+
+	  </script>
+	</body>
+	</html>
