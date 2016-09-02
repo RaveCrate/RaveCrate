@@ -1,0 +1,321 @@
+/* -----------------------------------------------------------------------------
+ *
+ *  WRAPPER OBJECT
+ *
+ *-----------------------------------------------------------------------------
+
+.o-wrapper
+  -webkit-transition: -webkit-transform 0.3s
+  transition: transform 0.3s
+  background: rgba(0, 0, 0, 0.3)
+  height: 100px
+  border-bottom: solid
+  border-width: 1px
+  border-color: rgba(255, 255, 255, 0.9)
+
+/* -----------------------------------------------------------------------------
+ *
+ *  CONTAINER OBJECTS
+ *
+ *-----------------------------------------------------------------------------
+
+@media all and (min-width: 480px)
+  .o-container
+    padding: 0 24px
+
+@media all and (min-width: 720px)
+  .o-container
+    padding: 0 48px
+
+/* -----------------------------------------------------------------------------
+ *
+ *  HEADER OBJECT
+ *
+ *-----------------------------------------------------------------------------
+
+.o-header
+  margin: 0
+  padding: 0
+
+.o-header-nav
+  display: -webkit-box
+  display: -webkit-flex
+  display: -ms-flexbox
+  display: flex
+  -webkit-box-pack: justify
+  -webkit-justify-content: space-between
+  -ms-flex-pack: justify
+  justify-content: space-between
+  background-color: #67b5d1
+
+.o-header-nav__link
+  padding: 12px
+  color: #fff
+  &:hover
+    color: #fff
+    background-color: $blue
+
+.o-header__title
+  margin: 24px
+  padding: 0
+  color: #818181
+  font-size: 28px
+  font-weight: 300
+  text-align: center
+
+@media all and (min-width: 480px)
+  .o-header__title
+    margin: 36px
+    font-size: 42px
+
+/* -----------------------------------------------------------------------------
+ *
+ *  MAIN OBJECT
+ *
+ *-----------------------------------------------------------------------------
+
+.o-main
+  /*
+
+/* -----------------------------------------------------------------------------
+ *
+ *  SUB-NAVIGATION OBJECT
+ *
+ *-----------------------------------------------------------------------------
+
+.o-sub-nav
+  margin: 0 0 24px 0
+  padding: 0
+
+.o-sub-nav__items
+  display: -webkit-box
+  display: -webkit-flex
+  display: -ms-flexbox
+  display: flex
+  -webkit-flex-flow: row wrap
+  -ms-flex-flow: row wrap
+  flex-flow: row wrap
+  -webkit-box-pack: center
+  -webkit-justify-content: center
+  -ms-flex-pack: center
+  justify-content: center
+  list-style: none
+  margin: 0
+  padding: 0
+
+.o-sub-nav__item
+  margin: 0
+  padding: 4px
+
+.o-sub-nav__link
+  display: block
+  margin: 0
+  padding: 4px 24px
+  border: solid 2px $blue
+  &:hover
+    color: #fff
+    background-color: $blue
+    left: 20px
+
+.o-sub-nav__item.active .o-sub-nav__link
+  color: #fff
+  background-color: #67b5d1
+
+@media all and (min-width: 720px)
+  .o-sub-nav
+    margin: 0 0 48px 0
+
+/* -----------------------------------------------------------------------------
+ *
+ *  SLIDE AND PUSH MENUS COMPONENT
+ *
+ *-----------------------------------------------------------------------------
+/**
+ * Menu overview.
+
+.c-menu
+  position: fixed
+  z-index: 200
+  background-color: #000
+  -webkit-transition: -webkit-transform 0.3s
+  transition: transform 0.3s
+
+.c-menu__items
+  list-style: none
+  margin: 0
+  padding: 0
+
+/**
+ * Left and right menus
+ *
+ * Slide and push menus coming in from the left and right inherit a lot of
+ * common styles. We'll start each of them off by doing up the common styles
+ * for each version, followed by individual styles.
+ *
+ * The various versions are governed by modifier classes.
+/**
+ * Common modifiers for left/right menus.
+
+.c-menu--slide-left
+  width: 100%
+  height: 100%
+  overflow-y: scroll
+  .c-menu__item
+    display: block
+    text-align: center
+    border-top: solid 1px $blue
+    border-bottom: solid 1px $blue
+    &:first-child
+      border-top: none
+    &:last-child
+      border-bottom: none
+  .c-menu__link
+    display: block
+    padding: 12px 24px
+  .c-menu__close
+    display: block
+    padding: 12px 24px
+    width: 100%
+  top: 0
+  left: 0
+  -webkit-transform: translateX(-100%)
+  -ms-transform: translateX(-100%)
+  transform: translateX(-100%)
+  &.is-active
+    -webkit-transform: translateX(0)
+    -ms-transform: translateX(0)
+    transform: translateX(0)
+
+@media all and (min-width: 320px)
+  .c-menu--slide-left
+    width: 300px
+
+/**
+ * Slide/Push Menu Left.
+
+@media all and (min-width: 320px)
+  .c-menu--slide-left
+    -webkit-transform: translateX(-300px)
+    -ms-transform: translateX(-300px)
+    transform: translateX(-300px)
+
+/**
+ * Wrapper states.
+ *
+ * Various wrapper states occur depending on if a menu is pushing into view, in
+ * which case, the wrapper has to be pushed by the respective distance.
+
+.o-wrapper.has-push-left
+  -webkit-transform: translateX(100%)
+  -ms-transform: translateX(100%)
+  transform: translateX(100%)
+
+@media all and (min-width: 320px)
+  .o-wrapper.has-push-left
+    -webkit-transform: translateX(300px)
+    -ms-transform: translateX(300px)
+    transform: translateX(300px)
+
+/**
+ * Body states.
+ *
+ * When a menu is active, we want to hide the overflows on the body to prevent
+ * awkward document scrolling.
+
+body.has-active-menu
+  overflow: hidden
+
+/**
+ * Close button resets.
+
+.c-menu_close
+  background-color: #000
+  float: left
+  border: #000
+  color: #fff
+  &:hover
+    color: $blue
+
+.close-login
+  padding: 20px
+
+.nav-login
+  float: right
+
+.nav-signup
+  padding: 15px 50px
+  background-color: $blue
+  border: 1px solid #fff
+  &:hover
+    color: #ddd
+    border-color: #ddd
+
+.nav-signup-div
+  margin: 30px
+  margin-left: 65px
+
+/* -----------------------------------------------------------------------------
+ *
+ *  MASK COMPONENT
+ *
+ *-----------------------------------------------------------------------------
+
+.c-mask
+  position: fixed
+  z-index: 100
+  top: 0
+  left: 0
+  overflow: hidden
+  width: 0
+  height: 0
+  background-color: #000
+  opacity: 0
+  -webkit-transition: opacity 0.3s, width 0s 0.3s, height 0s 0.3s
+  transition: opacity 0.3s, width 0s 0.3s, height 0s 0.3s
+  &.is-active
+    width: 100%
+    height: 100%
+    opacity: 0.7
+    -webkit-transition: opacity 0.3s
+    transition: opacity 0.3s
+
+/* -----------------------------------------------------------------------------
+ *
+ *  BUTTONS
+ *
+ *-----------------------------------------------------------------------------
+
+.c-buttons
+  margin-bottom: 48px
+  text-align: center
+
+.c-button
+  display: inline-block
+  float: left
+  margin: 20px
+  margin-top: 30px
+  background: none
+  border: none
+  font-size: 20px
+  img
+    height: 40px
+    width: 40px
+    margin-right: 10px
+
+.c-menu_login a
+  padding: 20px
+  padding-bottom: 40px
+
+.nav-image
+  img
+    height: 75px
+    position: fixed
+    bottom: 0px
+    left: 20px
+    margin: 0 auto
+
+.c-menu
+  border: 3px solid $blue
+
+.nav-border-bottom
+  border-top: solid 1px $blue
