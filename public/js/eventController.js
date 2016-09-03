@@ -165,8 +165,7 @@ app.controller('eventCtrl', function($scope, $http, $window) {
 
       // Remove the year from the newDate and move it to after the date
       var moveYear = newDate.splice(1, 4);
-      newDate.splice(3, 0, moveYear[0], moveYear[1], moveYear[2],
-      moveYear[3]);
+      newDate.splice(3, 0, moveYear[0], moveYear[1], moveYear[2], moveYear[3]);
 
       // Create a function called joinDate that will allow us to join the individual strings together
       Array.prototype.joinDate = function(seperator, start, end){
