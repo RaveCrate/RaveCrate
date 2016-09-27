@@ -18,8 +18,12 @@
 
 	<link rel="icon" href="/../images/favicon.ico" type="image/x-icon">
 
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.0/angular-route.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.0/angular-cookies.min.js"></script>
 </head><!--/head-->
-<body class="signup-body">
+
+<body class="signup-body" ng-app="app">
 	<div id="o-wrapper" class="o-wrapper">
 		<button id="c-button--slide-left" class="c-button"><img src="/../images/logo.png" class="c-button-img">MENU</button>
 		<div class="rightlogin">
@@ -39,22 +43,22 @@
 	<nav id="c-menu--slide-left" class="c-menu c-menu--slide-left">
 		<div class="close-login">
 			<button class="c-menu_close">&#10005;</button>
-			<a href="login.html" class="nav-login">LOG IN</a>
+			<a href="/login" class="nav-login">LOG IN</a>
 		</div>
-		<div class="nav-signup-div">
-			<a href="signup.html" class="nav-signup">SIGN UP</a>
-		</div>
+	<div class="nav-signup-div">
+		<a href="/signup" class="nav-signup">SIGN UP</a>
+	</div>
 		<ul class="c-menu__items">
-			<li class="c-menu__item nav-border-top"><a href="index.html" class="c-menu__link">HOME</a></li>
-			<li class="c-menu__item"><a href="about.html" class="c-menu__link">ABOUT US</a></li>
-			<li class="c-menu__item"><a href="events.html" class="c-menu__link">EVENTS</a></li>
-			<li class="c-menu__item"><a href="createevents.html" class="c-menu__link">CREATE AN EVENT</a></li>
-			<li class="c-menu__item"><a href="freelancer.html" class="c-menu__link">FREELANCERS</a></li>
-			<li class="c-menu__item"><a href="createfreelancer.html" class="c-menu__link">BE A FREELANCER</a></li>
+			<li class="c-menu__item nav-border-top"><a href="/" class="c-menu__link">HOME</a></li>
+			<li class="c-menu__item"><a href="/about" class="c-menu__link">ABOUT US</a></li>
+			<li class="c-menu__item"><a href="/events" class="c-menu__link">EVENTS</a></li>
+			<li class="c-menu__item"><a href="/events/create" class="c-menu__link">CREATE AN EVENT</a></li>
+			<li class="c-menu__item"><a href="/freelancers" class="c-menu__link">FREELANCERS</a></li>
+			<li class="c-menu__item"><a href="/freelancers/signup" class="c-menu__link">BE A FREELANCER</a></li>
 			<li class="c-menu__item nav-border-bottom"><a href="#" class="c-menu__link">SETTINGS</a></li>
 		</ul>
 		<div class="nav-image">
-			<img src="/../images/RC_Topbanner.png">
+			<img src="../images/RC_Topbanner.png">
 		</div>
 	</nav><!-- /c-menu slide-left -->
 	<div id="c-mask" class="c-mask"></div><!-- /c-mask -->
@@ -70,7 +74,7 @@
 				</div>
 				<div class="col-md-4 signup-form">
 					<h3>It's free so join today!</h3>
-					<form action="index.html" method="post">
+					<form action="index.html" method="post" ng-submit="vm.signup()">
 						<input type="text" name="first-name" id="first-name" value="" placeholder="First Name">
 						<input type="text" name="last-name" id="last-name" value="" placeholder="Last Name">
 						<input type="text" name="email" id="email" value="" placeholder="Email">
@@ -87,24 +91,21 @@
 		</div>
 	</section>
 
-
-
-
 	<footer>
 		<div class="footer-links">
 			<div class="row">
-				<div class="col-md-1"><a href="signup.html">signup</a></div>
-				<div class="col-md-1"><a href="login.html">login</a></div>
-				<div class="col-md-1"><a href="eventplanner.html">eventplanner</a></div>
-				<div class="col-md-1"><a href="freelancer.html">freelancer</a></div>
-				<div class="col-md-1"><a href="comingsoon.html">icons</a></div>
-				<div class="col-md-1"><a href="comingsoon.html">peoples</a></div>
-				<div class="col-md-1"><a href="events.html">events</a></div>
-				<div class="col-md-1"><a href="comingsoon.html">contact us</a></div>
-				<div class="col-md-1"><a href="comingsoon.html">terms</a></div>
-				<div class="col-md-1"><a href="comingsoon.html">find a city</a></div>
-				<div class="col-md-1"><a href="about.html">about us</a></div>
-				<div class="col-md-1"><a href="comingsoon.html">careers</a></div>
+				<div class="col-md-1"></div>
+				<div class="col-md-1"></div>
+				<div class="col-md-1"><a href="/signup">signup</a></div>
+				<div class="col-md-1"><a href="/login">login</a></div>
+				<div class="col-md-1"><a href="/freelancers">freelancer</a></div>
+				<div class="col-md-1"><a href="/events">events</a></div>
+				<div class="col-md-1"><a href="/contact">contact us</a></div>
+				<div class="col-md-1"><a href="/comingsoon">terms</a></div>
+				<div class="col-md-1"><a href="/comingsoon">poicies</a></div>
+				<div class="col-md-1"><a href="/about">about us</a></div>
+        <div class="col-md-1"></div>
+				<div class="col-md-1"></div>
 			</div>
 		</div>
 		<div class="row bottom-footer">
@@ -130,6 +131,11 @@
 	<script type="text/javascript" src="/../js/owl.carousel.min.js"></script>
 	<script type="text/javascript" src="/../js/wow.min.js"></script>
 	<script type="text/javascript" src="/../js/main.js"></script>
+	<script type="text/javascript" src="/../js/app.js"></script>
+	<script type="text/javascript" src="/../controllers/signupController.js"></script>
+	<script type="text/javascript" src="/../auth/authenticationService.js"></script>
+	<script type="text/javascript" src="/../auth/userService.js"></script>
+	<script type="text/javascript" src="/../auth/flashService.js"></script>
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
 	<script>
 		// close = document.getElementById("close");

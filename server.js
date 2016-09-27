@@ -25,12 +25,44 @@ app.get('/', function(req, res){ // any route that isn't API then load static in
     res.sendFile(path.join(__dirname + '/public/views/index.html'));
 });
 
-app.get('/events', function(req, res) {
-  res.render('events.html');
+app.get('/login', function(req, res){
+    res.sendFile(path.join(__dirname + '/public/views/login.html'));
 });
 
-app.get('/about', function(req, res) {
-  res.render('about.html');
+app.get('/signup', function(req, res){
+    res.sendFile(path.join(__dirname + '/public/views/signup.html'));
+});
+
+app.get('/events', function(req, res){
+    res.sendFile(path.join(__dirname + '/public/views/events.html'));
+});
+
+app.get('/events/detail', function(req, res){
+    res.sendFile(path.join(__dirname + '/public/views/eventDetail.html'));
+});
+
+app.get('/events/create', function(req, res){
+    res.sendFile(path.join(__dirname + '/public/views/createevents.html'));
+});
+
+app.get('/freelancers', function(req, res){
+    res.sendFile(path.join(__dirname + '/public/views/freelancer.html'));
+});
+
+app.get('/freelancers/signup', function(req, res){
+    res.sendFile(path.join(__dirname + '/public/views/createfreelancer.html'));
+});
+
+app.get('/contact', function(req, res){
+    res.sendFile(path.join(__dirname + '/public/views/contactUs.html'));
+});
+
+app.get('/about', function(req, res){
+    res.sendFile(path.join(__dirname + '/public/views/about.html'));
+});
+
+app.get('/comingsoon', function(req, res){
+    res.sendFile(path.join(__dirname + '/public/views/comingsoon.html'));
 });
 
 app.listen(port, function(){
