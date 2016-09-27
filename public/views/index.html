@@ -23,34 +23,35 @@
     <![endif]-->
   <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
 </head><!--/head-->
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
 <body>
 
 
   <div id="home-section" class="image-bg">
 
-  	<div id="o-wrapper" class="o-wrapper">
-      <button id="c-button--slide-left" class="c-button"><img src="../images/logo.png" class="c-button-img">MENU</button>
+    <div id="o-wrapper" class="o-wrapper">
+      <button id="c-button--slide-left" class="c-button"><img src="/../images/logo.png" class="c-button-img">MENU</button>
       <div class="rightlogin">
-        <a href="login.html">LOG IN</a>
-        <a href="signup.html">SIGN UP</a>
+        <a href="/login">LOG IN</a>
+        <a href="/signup">SIGN UP</a>
       </div>
   	</div><!-- /o-wrapper -->
 
     <nav id="c-menu--slide-left" class="c-menu c-menu--slide-left">
       <div class="close-login">
         <button class="c-menu_close">&#10005;</button>
-        <a href="login.html" class="nav-login">LOG IN</a>
+        <a href="/login" class="nav-login">LOG IN</a>
       </div>
     <div class="nav-signup-div">
-      <a href="signup.html" class="nav-signup">SIGN UP</a>
+      <a href="/signup" class="nav-signup">SIGN UP</a>
     </div>
     	<ul class="c-menu__items">
-    	  <li class="c-menu__item nav-border-top"><a href="index.html" class="c-menu__link">HOME</a></li>
-        <li class="c-menu__item"><a href="about.html" class="c-menu__link">ABOUT US</a></li>
-    	  <li class="c-menu__item"><a href="./views/events.html" class="c-menu__link">EVENTS</a></li>
-    	  <li class="c-menu__item"><a href="createevents.html" class="c-menu__link">CREATE AN EVENT</a></li>
-    	  <li class="c-menu__item"><a href="freelancer.html" class="c-menu__link">FREELANCERS</a></li>
-    	  <li class="c-menu__item"><a href="createfreelancer.html" class="c-menu__link">BE A FREELANCER</a></li>
+    	  <li class="c-menu__item nav-border-top"><a href="/" class="c-menu__link">HOME</a></li>
+        <li class="c-menu__item"><a href="/about" class="c-menu__link">ABOUT US</a></li>
+    	  <li class="c-menu__item"><a href="/events" class="c-menu__link">EVENTS</a></li>
+    	  <li class="c-menu__item"><a href="/events/create" class="c-menu__link">CREATE AN EVENT</a></li>
+    	  <li class="c-menu__item"><a href="/freelancers" class="c-menu__link">FREELANCERS</a></li>
+    	  <li class="c-menu__item"><a href="/freelancers/signup" class="c-menu__link">BE A FREELANCER</a></li>
     	  <li class="c-menu__item nav-border-bottom"><a href="#" class="c-menu__link">SETTINGS</a></li>
     	</ul>
       <div class="nav-image">
@@ -458,7 +459,7 @@
             <div class="icon-title">
               <p>DJ</p>
             </div>
-            <a tabindex="0" data-toggle="popover" data-trigger="hover focus" data-placement="right" title="DJ" data-content="Relying on word-of- mouth to find a DJ for your event is time-consuming, but we can put you in touch with professionals at the touch of a button."><img src="../images/icons/RC_DJ.png"></a>
+            <a tabindex="0" data-toggle="popover" data-trigger="hover focus" data-placement="right" title="DJ" data-content="Relying on word-of- mouth to find a DJ for your event is time-consuming, but we can put you in touch with professionals at the touch of a button."><img src="../images/icons/RC_Dj.png"></a>
             <!-- <p>DJ</p> -->
           </div>
           <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 icon-content">
@@ -588,14 +589,14 @@
       <div class="row">
 				<div class="col-md-1"></div>
 				<div class="col-md-1"></div>
-				<div class="col-md-1"><a href="signup.html">signup</a></div>
-				<div class="col-md-1"><a href="login.html">login</a></div>
-				<div class="col-md-1"><a href="freelancer.html">freelancer</a></div>
-				<div class="col-md-1"><a href="events.html">events</a></div>
-				<div class="col-md-1"><a href="contactUs.html">contact us</a></div>
-				<div class="col-md-1"><a href="comingsoon.html">terms</a></div>
-				<div class="col-md-1"><a href="comingsoon.html">poicies</a></div>
-				<div class="col-md-1"><a href="about.html">about us</a></div>
+				<div class="col-md-1"><a href="/signup">signup</a></div>
+				<div class="col-md-1"><a href="/login">login</a></div>
+				<div class="col-md-1"><a href="/freelancers">freelancer</a></div>
+				<div class="col-md-1"><a href="/events">events</a></div>
+				<div class="col-md-1"><a href="/contact">contact us</a></div>
+				<div class="col-md-1"><a href="/comingsoon">terms</a></div>
+				<div class="col-md-1"><a href="/comingsoon">poicies</a></div>
+				<div class="col-md-1"><a href="/about">about us</a></div>
         <div class="col-md-1"></div>
 				<div class="col-md-1"></div>
 			</div>
@@ -624,6 +625,7 @@
   <script type="text/javascript" src="../js/owl.carousel.min.js"></script>
   <script type="text/javascript" src="../js/wow.min.js"></script>
   <script type="text/javascript" src="../js/main.js"></script>
+  <script type="text/javascript" src="../js/app.js"></script>
   <script>
     close = document.getElementById("close");
     close.addEventListener('click', function() {
